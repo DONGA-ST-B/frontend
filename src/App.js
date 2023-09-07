@@ -1,11 +1,8 @@
 import "./App.css";
+import RooteRoute from "./routes";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">helloworld</header>
-    </div>
-  );
+  return <RooteRoute />;
 }
 
 export default App;
