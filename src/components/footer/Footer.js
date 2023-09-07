@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LogoWhite from "../../assets/Logo_White.png"
+import LogoWhite from "../../assets/LogoWhite.png"
 import "./Footer.css";
 import { COLORS } from "../../styles/colors";
 
