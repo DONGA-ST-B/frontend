@@ -24,6 +24,21 @@ const FooterInfo = ({ label, value }) => (
   </span>
 );
 
+// 메뉴 컴포넌트
+const MenuLink = ({ text }) => (
+  <a href="/" style={
+    { 
+      color: COLORS.WHITE, 
+      textDecoration: "none",
+      borderBottom: "2px solid #1AABDE", 
+      marginTop: "10px",
+      paddingLeft: "5px"
+    }
+  }>
+    {text}
+  </a>
+);
+
 class Footer extends Component {
   render() {
     const footerStyle = {
@@ -54,6 +69,11 @@ class Footer extends Component {
       alignItems: "flex-end",
     };
 
+    // 서비스 이용약관 메뉴 위에 여백 추가
+    const menuContainerStyle = {
+      marginTop: "70px",
+    };
+
     return (
       <div style={footerStyle} className="footer-container">
         <div className="footer-content">
@@ -80,12 +100,14 @@ class Footer extends Component {
           <FooterInfo label="Hosting by" value={footerData.hosting} />
         </div>
         <div style={menuStyle}>
+          {/* 서비스 이용약관 메뉴 위에 여백 추가 */}
+          <div style={menuContainerStyle}>
+            <MenuLink text="서비스 이용약관" />
+          </div>
           <div style={spacingStyle}></div>
-          <a href="/terms">서비스 이용약관</a>
+          <MenuLink text="개인정보취급방침" />
           <div style={spacingStyle}></div>
-          <a href="/privacy">개인정보취급방침</a>
-          <div style={spacingStyle}></div>
-          <a href="/help">이용안내</a>
+          <MenuLink text="이용안내" />
         </div>
       </div>
     );
