@@ -1,0 +1,6 @@
+/* styles.css (또는 원하는 CSS 파일) */
+.footer-container {
+    background-color: #131313; /* 배경 색상 */
+    color: #ffffff; /* 글자 색상 */
+    padding: 20px; /* 원하는 패딩 값 설정 */
+  }
