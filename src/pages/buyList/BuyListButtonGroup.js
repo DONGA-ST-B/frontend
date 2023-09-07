@@ -50,7 +50,7 @@ const styles = {
   buttonGroup: {
     display: "flex",
     gap: "8px",
-    marginLeft: "10vw", // 왼쪽 여백을 화면 너비의 10%로 설정
+    marginLeft: "20vw", // 왼쪽 여백을 화면 너비의 10%로 설정
   },
   button: {
     padding: "8px 16px",
