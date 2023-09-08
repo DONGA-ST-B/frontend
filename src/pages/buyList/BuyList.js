@@ -1,28 +1,45 @@
 import React from "react";
+import ProductImage from "../../assets/ProductItem.png";
+import ProductItem from "./ProductItem";
 
-const Product = ({ name }) => (
-  <div style={styles.product}>
-    <div style={styles.productImage}></div>
-    <div style={styles.productInfo}>
-      <h3>{name}</h3>
-    </div>
-  </div>
-);
+const productList = [
+  {
+    name: "하이카디플러스 HiCardi+",
+    imageSrc: ProductImage,
+    description: "한 층 더 업그레이드 된 하이카디 플러스 HiCardi + ",
+    price: "2,046,000원",
+  },
+  {
+    name: "하이카디플러스 HiCardi+",
+    imageSrc: ProductImage,
+    description: "한 층 더 업그레이드 된 하이카디 플러스 HiCardi + ",
+    price: "2,046,000원",
+  },
+  {
+    name: "하이카디플러스 HiCardi+",
+    imageSrc: ProductImage,
+    description: "한 층 더 업그레이드 된 하이카디 플러스 HiCardi + ",
+    price: "2,046,000원",
+  },
+  {
+    name: "하이카디플러스 HiCardi+",
+    imageSrc: ProductImage,
+    description: "한 층 더 업그레이드 된 하이카디 플러스 HiCardi + ",
+    price: "2,046,000원",
+  },
+];
 
 const BuyList = () => {
-  const productList = [
-    { name: "제품 1" },
-    { name: "제품 2" },
-    { name: "제품 3" },
-    { name: "제품 4" },
-    { name: "제품 5" },
-    { name: "제품 6" },
-  ];
-
   return (
     <div style={styles.container}>
       {productList.map((product, index) => (
-        <Product key={index} name={product.name} />
+        <ProductItem
+          key={index}
+          name={product.name}
+          imageSrc={product.imageSrc}
+          description={product.description}
+          price={product.price}
+        />
       ))}
     </div>
   );
@@ -35,22 +52,6 @@ const styles = {
     justifyContent: "space-between",
     marginLeft: "20%",
     marginRight: "20%",
-  },
-  product: {
-    width: "45%",
-    marginBottom: "20px",
-    padding: "10px",
-    borderRadius: "10px",
-  },
-  productImage: {
-    width: "100%",
-    height: "150px",
-    backgroundColor: "#eee",
-    borderRadius: "10px",
-  },
-  productInfo: {
-    marginTop: "10px",
-    textAlign: "center",
   },
 };
 
