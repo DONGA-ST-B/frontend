@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import logo from "../../assets/hicardi_logo.png";
+import { Search } from "@mui/icons-material";
 
 export default function Header() {
   return (
@@ -20,7 +21,9 @@ export default function Header() {
 
       <RightBox>
         <MenuText>
-          <WhiteButton>검색</WhiteButton>
+          <WhiteButton>
+            <Search style={{ height: "17px" }} />
+          </WhiteButton>
           <WhiteButton>로그인</WhiteButton>
           <SkyButton>회원가입</SkyButton>
         </MenuText>
@@ -85,6 +88,9 @@ const WhiteButton = styled.div`
   background: #fff;
   /* transition: all 0.3s; */
   padding: 6px 15px 6px 15px;
+  display: flex;
+  justify-content: center;
   margin-left: 7px;
   margin-right: 7px;
+  /* width: 100%; */
 `;
