@@ -35,7 +35,7 @@ export default function Header() {
 const HeaderBox = styled.div`
   /* border: 2px solid red; */
   width: 80%;
-  /* height: 83px; */
+  height: 7vh;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 10px;

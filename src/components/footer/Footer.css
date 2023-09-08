@@ -1,0 +1,16 @@
+/* Footer.css */
+
+/* 기본 스타일 */
+.footer-container {
+    background-color: #131313;
+    color: #ffffff;
+    padding: 20px;
+  }
+  
+/* 화면 너비에 따라 자동으로 비율 조정 */
+@media screen and (min-width: 1px) {
+    .footer-container {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+  }
