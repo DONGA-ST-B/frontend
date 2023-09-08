@@ -1,14 +1,35 @@
 import React, { useEffect, useRef, useState } from "react";
 import monitoring_img from "../../assets/monitoring-solution-img.jpg";
 import styled from "styled-components";
+import SmartPatch from "./SmartPatch";
 
 export default function MonitoringInfo() {
-  const [isInViewport, setIsInViewPort] = useState(false);
-  const ref = (useRef < HTMLDivElement) | (null > null);
+  // const [isInViewport, setIsInViewPort] = useState(false);
+  // const ref = (useRef < HTMLDivElement) | (null > null);
 
-  useEffect(() => {
-    if (!ref.current) return;
-  });
+  // useEffect(() => {
+  //   if (!ref.current) return;
+
+  //   const callback = (entries: IntersectionObserverEntry[]) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         //요소가 뷰포트에 나타난 경우
+  //         setIsInViewPort(true);
+  //       } else {
+  //         //그 반대
+  //         setIsInViewPort(false);
+  //       }
+  //     });
+  //   };
+
+  //   const options = { root: null, rootMargin: "0px", threshold: 0 };
+
+  //   const observer = new IntersectionObserver(callback, options);
+
+  //   return () => {
+  //     observer.disconnect();
+  //   };
+  // }, []);
 
   return (
     <InfoContainer>
@@ -27,6 +48,7 @@ export default function MonitoringInfo() {
           </TextDescrip>
         </TextContainer>
       </BackImg>
+      <SmartPatch />
     </InfoContainer>
   );
 }
@@ -84,7 +106,7 @@ const BigText = styled.div`
 const MiddleText = styled.div`
   color: var(--blue, #18afdd);
   font-family: Pretendard;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 50.4px */
@@ -97,4 +119,13 @@ const TextDescrip = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 44.8px */
+`;
+
+const TextTitle = styled.div`
+  color: var(--gray-900, #15191d);
+  font-family: Pretendard;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 64px */
 `;
