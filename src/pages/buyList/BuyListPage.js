@@ -15,8 +15,9 @@ export default function BuyListPage() {
       <div style={{ marginBottom: "50px" }}>
         <BuyListButtonGroup buttons={buttons} />
       </div>
-      <BuyList />
-      <Footer />
+      <div style={{ marginBottom: "100px" }}>
+        <BuyList />
+      </div>      <Footer />
     </div>
   );
 }
