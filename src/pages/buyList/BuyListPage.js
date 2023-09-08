@@ -17,7 +17,8 @@ export default function BuyListPage() {
       </div>
       <div style={{ marginBottom: "100px" }}>
         <BuyList />
-      </div>      <Footer />
+      </div>     
+       <Footer />
     </div>
   );
 }
