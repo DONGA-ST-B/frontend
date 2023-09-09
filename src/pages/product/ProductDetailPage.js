@@ -1,23 +1,16 @@
 import React from "react";
-import { useParams } from "react-router-dom"; // React Router의 useParams를 가져옵니다.
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
+import ProductContainer from "../product/ProductContainer"
 
-const ProductDetail = ({ productList }) => {
-  // useParams를 사용하여 현재 선택된 제품의 인덱스를 가져옵니다.
-  const { index } = useParams();
-  const product = productList[index];
-
-  if (!product) {
-    return <div>제품을 찾을 수 없습니다.</div>;
-  }
-
+export default function ProductDetailPage() {
   return (
     <div>
-      <h1>{product.name}</h1>
-      <img src={product.imageSrc} alt={product.name} />
-      <p>{product.description}</p>
-      <p>{product.price}</p>
+      <Header />
+      <div>
+        <ProductContainer />
+      </div>
+      <Footer />
     </div>
   );
-};
-
-export default ProductDetail;
+}
