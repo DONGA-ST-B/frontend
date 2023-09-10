@@ -59,7 +59,7 @@ const TextContainer = styled.div`
   /* position: absolute;
   left: 165px;
   top: 234px; */
-  margin: 100px 0 0 0;
+  margin: 100px 0 100px 0;
   text-align: center;
 `;
 
