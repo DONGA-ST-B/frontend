@@ -4,52 +4,50 @@ import smartpatch from "../../assets/smartpatch.jpg";
 
 export default function SmartPatch() {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <TextContainer>
-        <ItemImg src={smartpatch} alt="smartpatch" />
-        <div>
-          <MiddleText>HiCardi SmartPatch</MiddleText>
-          <TextTitle>웨어러블 스마트 패치</TextTitle>
+    <TextContainer>
+      <div>
+        <MiddleText>HiCardi SmartPatch</MiddleText>
+        <TextTitle>웨어러블 스마트 패치</TextTitle>
 
-          <div>
-            <PatchBox>
-              {/* <div>아이콘</div> */}
-              <PatchText>
-                {" "}
-                <h4>정밀한 모니터링</h4>
-                <TextDescrip>
-                  HiCardi 시스템의 핵심으로, 부정맥, 심전도, 호흡, 피부온과 같은
-                  환자의 생리학적 데이터를 실시간으로 측정합니다.
-                </TextDescrip>
-              </PatchText>
-            </PatchBox>
-            <PatchBox>
-              {/* <div>아이콘</div> */}
-              <PatchText>
-                {" "}
-                <h4>손 쉬운 사용</h4>
-                <TextDescrip>
-                  작고 컴팩트한 무선 디자인으로 흉부에 간편하게 부착할 수
-                  있습니다. 특수 소재 전극을 사용해 피부 트러블이 적어 착용 시
-                  이물감이 적습니다.
-                </TextDescrip>
-              </PatchText>
-            </PatchBox>
-            <PatchBox>
-              {/* <div>아이콘</div> */}
-              <PatchText>
-                {" "}
-                <h4>생활 방수 가능</h4>
-                <TextDescrip>
-                  IP67 방수 등급을 받아, 샤워 등 일상 생활시에도 지속적인 ECG
-                  측정이 가능합니다.
-                </TextDescrip>
-              </PatchText>
-            </PatchBox>
-          </div>
+        <div>
+          <PatchBox>
+            {/* <div>아이콘</div> */}
+            <PatchText>
+              {" "}
+              <h4>정밀한 모니터링</h4>
+              <TextDescrip>
+                HiCardi 시스템의 핵심으로, 부정맥, 심전도, 호흡, 피부온과 같은
+                환자의 생리학적 데이터를 실시간으로 측정합니다.
+              </TextDescrip>
+            </PatchText>
+          </PatchBox>
+          <PatchBox>
+            {/* <div>아이콘</div> */}
+            <PatchText>
+              {" "}
+              <h4>손 쉬운 사용</h4>
+              <TextDescrip>
+                작고 컴팩트한 무선 디자인으로 흉부에 간편하게 부착할 수
+                있습니다. 특수 소재 전극을 사용해 피부 트러블이 적어 착용 시
+                이물감이 적습니다.
+              </TextDescrip>
+            </PatchText>
+          </PatchBox>
+          <PatchBox>
+            {/* <div>아이콘</div> */}
+            <PatchText>
+              {" "}
+              <h4>생활 방수 가능</h4>
+              <TextDescrip>
+                IP67 방수 등급을 받아, 샤워 등 일상 생활시에도 지속적인 ECG
+                측정이 가능합니다.
+              </TextDescrip>
+            </PatchText>
+          </PatchBox>
         </div>
-      </TextContainer>
-    </div>
+      </div>
+      <ItemImg src={smartpatch} alt="smartpatch" />
+    </TextContainer>
   );
 }
 
