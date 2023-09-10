@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import React from "react";
+// import React from "react";
 import { UseScrollAnimation } from "./UseScroll.ts";
 
 type PropsType = {
