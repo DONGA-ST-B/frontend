@@ -1,39 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import monitoring_img from "../../assets/monitoring-solution-img.jpg";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import SmartPatch from "./SmartPatch";
+// import { ScrollAnimationContainer } from "./ScrollAnimationContainer.tsx";
+import StatusMonitoring from "./StatusMonitoring";
 
 export default function MonitoringInfo() {
-  // const [isInViewport, setIsInViewPort] = useState(false);
-  // const ref = (useRef < HTMLDivElement) | (null > null);
-
-  // useEffect(() => {
-  //   if (!ref.current) return;
-
-  //   const callback = (entries: IntersectionObserverEntry[]) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         //요소가 뷰포트에 나타난 경우
-  //         setIsInViewPort(true);
-  //       } else {
-  //         //그 반대
-  //         setIsInViewPort(false);
-  //       }
-  //     });
-  //   };
-
-  //   const options = { root: null, rootMargin: "0px", threshold: 0 };
-
-  //   const observer = new IntersectionObserver(callback, options);
-
-  //   return () => {
-  //     observer.disconnect();
-  //   };
-  // }, []);
-
   return (
     <InfoContainer>
       <BackImg>
+        {/* <ScrollAnimationContainer> */}
         <TextContainer>
           <MiddleText>환자 모니터링 솔루션</MiddleText>
           <BigText>
@@ -47,8 +23,16 @@ export default function MonitoringInfo() {
             수 있습니다.
           </TextDescrip>
         </TextContainer>
+        {/* </ScrollAnimationContainer> */}
       </BackImg>
+
+      {/* <ScrollAnimationContainer> */}
       <SmartPatch />
+      {/* </ScrollAnimationContainer> */}
+
+      {/* <ScrollAnimationContainer> */}
+      <StatusMonitoring />
+      {/* </ScrollAnimationContainer> */}
     </InfoContainer>
   );
 }
