@@ -4,6 +4,7 @@ import styled, { keyframes } from "styled-components";
 import SmartPatch from "./SmartPatch";
 // import { ScrollAnimationContainer } from "./ScrollAnimationContainer.tsx";
 import StatusMonitoring from "./StatusMonitoring";
+import LiveStudio from "./LiveStudio";
 
 export default function MonitoringInfo() {
   return (
@@ -23,16 +24,12 @@ export default function MonitoringInfo() {
             수 있습니다.
           </TextDescrip>
         </TextContainer>
-        {/* </ScrollAnimationContainer> */}
       </BackImg>
 
-      {/* <ScrollAnimationContainer> */}
       <SmartPatch />
-      {/* </ScrollAnimationContainer> */}
 
-      {/* <ScrollAnimationContainer> */}
       <StatusMonitoring />
-      {/* </ScrollAnimationContainer> */}
+      <LiveStudio />
     </InfoContainer>
   );
 }
@@ -75,6 +72,7 @@ const TextContainer = styled.div`
   /* position: absolute;
   left: 165px;
   top: 234px; */
+  margin: 100px 0 0 0;
 `;
 
 const BigText = styled.div`

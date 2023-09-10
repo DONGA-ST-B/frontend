@@ -1,56 +1,58 @@
 import React from "react";
 import styled from "styled-components";
-import smartpatch from "../../assets/smartpatch.jpg";
 import CheckIcon from "@mui/icons-material/Check";
+import phone from "../../assets/phone.png";
 
 export default function StatusMonitoring() {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <TextContainer>
-        <div>
-          <div style={{ marginBottom: "50px" }}>
-            {" "}
-            <MiddleText>HiCardi SmartView</MiddleText>
-            <TextTitle>환자 상태 모니터링</TextTitle>
-          </div>
+    <TextContainer>
+      <div>
+        {" "}
+        <ItemImg src={phone} alt="phone" />
+      </div>
 
-          <div>
-            <PatchBox>
-              <CheckIcon style={{ color: "#18AFDD" }} />
-              <PatchText>
-                {" "}
-                <TextDescrip>
-                  모바일 앱으로 언제 어디서나 환자의 실시간 상태를 모니터링할 수
-                  있습니다.
-                </TextDescrip>
-              </PatchText>
-            </PatchBox>
-            <PatchBox>
-              <CheckIcon style={{ color: "#18AFDD" }} />
-              <PatchText>
-                {" "}
-                <TextDescrip>
-                  작고 컴팩트한 무선 디자인으로 흉부에 간편하게 부착할 수
-                  있습니다. 특수 소재 전극을 사용해 피부 트러블이 적어 착용 시
-                  이물감이 적습니다.
-                </TextDescrip>
-              </PatchText>
-            </PatchBox>
-            <PatchBox>
-              <CheckIcon style={{ color: "#18AFDD" }} />
-              <PatchText>
-                {" "}
-                <TextDescrip>
-                  IP67 방수 등급을 받아, 샤워 등 일상 생활시에도 지속적인 ECG
-                  측정이 가능합니다.
-                </TextDescrip>
-              </PatchText>
-            </PatchBox>
-          </div>
+      <div>
+        <div style={{ marginBottom: "50px" }}>
+          {" "}
+          <MiddleText>HiCardi SmartView</MiddleText>
+          <TextTitle>환자 상태 모니터링</TextTitle>
         </div>
-        <ItemImg src={smartpatch} alt="smartpatch" />
-      </TextContainer>
-    </div>
+
+        <div>
+          <PatchBox>
+            <CheckIcon style={{ color: "#18AFDD" }} />
+            <PatchText>
+              {" "}
+              <TextDescrip>
+                모바일 앱으로 언제 어디서나 환자의 실시간 상태를 모니터링할 수
+                있습니다.
+              </TextDescrip>
+            </PatchText>
+          </PatchBox>
+          <PatchBox>
+            <CheckIcon style={{ color: "#18AFDD" }} />
+            <PatchText>
+              {" "}
+              <TextDescrip>
+                작고 컴팩트한 무선 디자인으로 흉부에 간편하게 부착할 수
+                있습니다. 특수 소재 전극을 사용해 피부 트러블이 적어 착용 시
+                이물감이 적습니다.
+              </TextDescrip>
+            </PatchText>
+          </PatchBox>
+          <PatchBox>
+            <CheckIcon style={{ color: "#18AFDD" }} />
+            <PatchText>
+              {" "}
+              <TextDescrip>
+                IP67 방수 등급을 받아, 샤워 등 일상 생활시에도 지속적인 ECG
+                측정이 가능합니다.
+              </TextDescrip>
+            </PatchText>
+          </PatchBox>
+        </div>
+      </div>
+    </TextContainer>
   );
 }
 
@@ -58,15 +60,15 @@ const TextContainer = styled.div`
   width: 75%;
   /* border: 1px solid red; */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   /* flex-direction: column; */
   align-items: center;
   /* gap: 20px; */
   /* position: absolute;
   left: 165px;
   top: 234px; */
-
-  margin: 100px 0 100px 0;
+  gap: 100px;
+  margin: 150px 0 150px 0;
 `;
 
 const MiddleText = styled.div`
@@ -114,6 +116,6 @@ const PatchText = styled.div`
 `;
 
 const ItemImg = styled.img`
-  width: 50%;
+  width: 100%;
   /* border: 1px solid red; */
 `;
