@@ -1,8 +1,8 @@
-{
-  "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
-    // "emitDeclarationOnly": true
-  }
-}
+// {
+//   "compilerOptions": {
+//     "allowImportingTsExtensions": true,
+//     "noEmit": true,
+//     "jsx": "react-jsx"
+//     // "emitDeclarationOnly": true
+//   }
+// }

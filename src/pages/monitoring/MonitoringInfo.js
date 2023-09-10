@@ -2,37 +2,37 @@ import React, { useEffect, useRef, useState } from "react";
 import monitoring_img from "../../assets/monitoring-solution-img.jpg";
 import styled, { keyframes } from "styled-components";
 import SmartPatch from "./SmartPatch";
-import { ScrollAnimationContainer } from "./ScrollAnimationContainer.tsx";
+// import { ScrollAnimationContainer } from "./ScrollAnimationContainer.tsx";
 import StatusMonitoring from "./StatusMonitoring";
 
 export default function MonitoringInfo() {
   return (
     <InfoContainer>
       <BackImg>
-        <ScrollAnimationContainer>
-          <TextContainer>
-            <MiddleText>환자 모니터링 솔루션</MiddleText>
-            <BigText>
-              HiCardi하이카디는 웨어러블 스마트 패치를 통해 실시간 원격
-              모니터링을 제공합니다.
-            </BigText>
-            <TextDescrip>
-              의료진이 실시간으로 환자를 더욱 집중 관리할 수 있도록 심전도(ECG),
-              호흡, 피부온과 같은 환자의 생리학적 모니터링 정보를 제공합니다.
-              국내 유일 심평원 수가를 받은 제품으로 합리적인 비용으로 간편하게
-              측정할 수 있습니다.
-            </TextDescrip>
-          </TextContainer>
-        </ScrollAnimationContainer>
+        {/* <ScrollAnimationContainer> */}
+        <TextContainer>
+          <MiddleText>환자 모니터링 솔루션</MiddleText>
+          <BigText>
+            HiCardi하이카디는 웨어러블 스마트 패치를 통해 실시간 원격 모니터링을
+            제공합니다.
+          </BigText>
+          <TextDescrip>
+            의료진이 실시간으로 환자를 더욱 집중 관리할 수 있도록 심전도(ECG),
+            호흡, 피부온과 같은 환자의 생리학적 모니터링 정보를 제공합니다. 국내
+            유일 심평원 수가를 받은 제품으로 합리적인 비용으로 간편하게 측정할
+            수 있습니다.
+          </TextDescrip>
+        </TextContainer>
+        {/* </ScrollAnimationContainer> */}
       </BackImg>
 
-      <ScrollAnimationContainer>
-        <SmartPatch />
-      </ScrollAnimationContainer>
+      {/* <ScrollAnimationContainer> */}
+      <SmartPatch />
+      {/* </ScrollAnimationContainer> */}
 
-      <ScrollAnimationContainer>
-        <StatusMonitoring />
-      </ScrollAnimationContainer>
+      {/* <ScrollAnimationContainer> */}
+      <StatusMonitoring />
+      {/* </ScrollAnimationContainer> */}
     </InfoContainer>
   );
 }
