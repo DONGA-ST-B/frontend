@@ -23,26 +23,23 @@ const Input = styled.input`
   border-radius: 50px;
   background-color: ${COLORS.GRAY_50};
   border: none;
-  padding: 0 24px;
   font-size: 16px;
   color: ${COLORS.GRAY_900};
   outline: none;
-
-  @media (max-width: auto) {
-    width: 100%;
-  }
+  padding-left: 16px;
+  box-sizing: border-box;
 `;
 
 const HintText = styled.div`
   position: absolute;
-  left: 24px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 16px;
   color: ${COLORS.GRAY_400};
   pointer-events: none;
-  transition: opacity 0.2s;
   opacity: ${(props) => (props.showHint ? 1 : 0)};
+  padding-left: 16px;
+  box-sizing: border-box; 
 `;
 
 function LoginInput() {
@@ -72,6 +69,7 @@ function LoginInput() {
           <Input
             type="text"
             onChange={handleIdInputChange}
+            isEmpty={showIdHint} 
           />
           <HintText showHint={showIdHint}>아이디</HintText>
         </InputWrapper>
@@ -79,6 +77,7 @@ function LoginInput() {
           <Input
             type="password"
             onChange={handlePasswordInputChange}
+            isEmpty={showPasswordHint} 
           />
           <HintText showHint={showPasswordHint}>비밀번호</HintText>
         </InputWrapper>

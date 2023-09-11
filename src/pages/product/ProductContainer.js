@@ -15,11 +15,11 @@ const ProductContainer = () => {
 
   const containerStyle = {
     display: "flex",
-    flexDirection: "row", // 가로 방향으로 정렬
-    justifyContent: "center", // 가로 방향으로 가운데 정렬
-    alignItems: "center", // 수직 가운데 정렬
-    height: "100vh", // 화면 전체 높이 차지
-    padding: "16px 200px", // 위 아래 여백을 16px로, 좌우 여백을 200px로 설정
+    flexDirection: "row", 
+    justifyContent: "center", 
+    alignItems: "center",
+    height: "100vh",
+    padding: "16px 200px", 
   };
 
 
