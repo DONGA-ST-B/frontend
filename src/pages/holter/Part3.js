@@ -117,5 +117,5 @@ const PatchBox = styled.div`
 const PatchText = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
 `;

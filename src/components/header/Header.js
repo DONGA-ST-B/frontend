@@ -1,17 +1,25 @@
 import React from "react";
 import { styled } from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/hicardi_logo.png";
 import { Search } from "@mui/icons-material";
-import { Link } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate(); 
+
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+
+
   return (
     <HeaderBox>
       <LeftBox>
         <MenuText>
-          <a href="/">
-            {" "}
+          <Link to="/">
             <img src={logo} alt="Hicardi" width="130px" />
+            </Link>
+            <a>
           </a>
           <TextContent>
             <Link to="/" style={{ textDecoration: "none", color: "black" }}>
@@ -37,7 +45,7 @@ export default function Header() {
           <WhiteButton>
             <Search style={{ height: "17px" }} />
           </WhiteButton>
-          <WhiteButton>로그인</WhiteButton>
+          <WhiteButton onClick={handleLoginClick}>로그인</WhiteButton>
           <SkyButton>회원가입</SkyButton>
         </MenuText>
       </RightBox>
@@ -99,7 +107,12 @@ const WhiteButton = styled.div`
   margin-left: 7px;
   margin-right: 7px;
   /* width: 100%; */
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
+
 
 const SubMenu = styled.ul`
   border: 1px solid #d3d3d3;

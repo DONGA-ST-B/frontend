@@ -39,6 +39,7 @@ const BuyList = () => {
           imageSrc={product.imageSrc}
           description={product.description}
           price={product.price}
+          index={index} // index 속성을 추가
         />
       ))}
     </div>
