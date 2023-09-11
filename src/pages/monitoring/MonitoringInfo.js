@@ -1,55 +1,46 @@
 import React, { useEffect, useRef, useState } from "react";
 import monitoring_img from "../../assets/monitoring-solution-img.jpg";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import SmartPatch from "./SmartPatch";
+// import { ScrollAnimationContainer } from "./ScrollAnimationContainer.tsx";
+import StatusMonitoring from "./StatusMonitoring";
+import LiveStudio from "./LiveStudio";
+import Page5 from "./Page5";
+import Why from "./Why";
+import Telemetry from "./Telemetry";
+import Footer from "../../components/footer/Footer";
 
 export default function MonitoringInfo() {
-  // const [isInViewport, setIsInViewPort] = useState(false);
-  // const ref = (useRef < HTMLDivElement) | (null > null);
-
-  // useEffect(() => {
-  //   if (!ref.current) return;
-
-  //   const callback = (entries: IntersectionObserverEntry[]) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         //요소가 뷰포트에 나타난 경우
-  //         setIsInViewPort(true);
-  //       } else {
-  //         //그 반대
-  //         setIsInViewPort(false);
-  //       }
-  //     });
-  //   };
-
-  //   const options = { root: null, rootMargin: "0px", threshold: 0 };
-
-  //   const observer = new IntersectionObserver(callback, options);
-
-  //   return () => {
-  //     observer.disconnect();
-  //   };
-  // }, []);
-
   return (
-    <InfoContainer>
-      <BackImg>
-        <TextContainer>
-          <MiddleText>환자 모니터링 솔루션</MiddleText>
-          <BigText>
-            HiCardi하이카디는 웨어러블 스마트 패치를 통해 실시간 원격 모니터링을
-            제공합니다.
-          </BigText>
-          <TextDescrip>
-            의료진이 실시간으로 환자를 더욱 집중 관리할 수 있도록 심전도(ECG),
-            호흡, 피부온과 같은 환자의 생리학적 모니터링 정보를 제공합니다. 국내
-            유일 심평원 수가를 받은 제품으로 합리적인 비용으로 간편하게 측정할
-            수 있습니다.
-          </TextDescrip>
-        </TextContainer>
-      </BackImg>
-      <SmartPatch />
-    </InfoContainer>
+    <div>
+      <InfoContainer>
+        <BackImg>
+          {/* <ScrollAnimationContainer> */}
+          <TextContainer>
+            <MiddleText>환자 모니터링 솔루션</MiddleText>
+            <BigText>
+              HiCardi하이카디는 웨어러블 스마트 패치를 통해 실시간 원격
+              모니터링을 제공합니다.
+            </BigText>
+            <TextDescrip>
+              의료진이 실시간으로 환자를 더욱 집중 관리할 수 있도록 심전도(ECG),
+              호흡, 피부온과 같은 환자의 생리학적 모니터링 정보를 제공합니다.
+              국내 유일 심평원 수가를 받은 제품으로 합리적인 비용으로 간편하게
+              측정할 수 있습니다.
+            </TextDescrip>
+          </TextContainer>
+        </BackImg>
+
+        <SmartPatch />
+
+        <StatusMonitoring />
+        <LiveStudio />
+        <Page5 />
+        <Why />
+        <Telemetry />
+      </InfoContainer>
+      <Footer />
+    </div>
   );
 }
 
@@ -91,6 +82,7 @@ const TextContainer = styled.div`
   /* position: absolute;
   left: 165px;
   top: 234px; */
+  margin: 100px 0 0 0;
 `;
 
 const BigText = styled.div`
