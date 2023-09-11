@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/hicardi_logo.png";
 import { Search } from "@mui/icons-material";
-import { Link } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate(); 
@@ -19,6 +18,8 @@ export default function Header() {
         <MenuText>
           <Link to="/">
             <img src={logo} alt="Hicardi" width="130px" />
+            </Link>
+            <a>
           </a>
           <TextContent>
             <Link to="/" style={{ textDecoration: "none", color: "black" }}>
