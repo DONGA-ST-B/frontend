@@ -5,6 +5,7 @@ import BuyListPage from "../pages/buyList/BuyListPage";
 import ProductDetailPage from "../pages/product/ProductDetailPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MonitoringPage from "../pages/monitoring/MonitoringPage";
+import HolterPage from "../pages/holter/HolterPage";
 import LoginPage from "../pages/login/LoginPage";
 
 export default function RootRoute() {
@@ -15,6 +16,9 @@ export default function RootRoute() {
         <Route path="/monitoring-solution" element={<MonitoringPage />} />
         <Route path="/footer" element={<Footer />} />
         <Route path="/buy-list" element={<BuyListPage />} />
+        <Route path="/product/:index" element={<ProductDetailPage />} />{" "}
+        {/* 추가 */}
+        <Route path="/holter-solution" element={<HolterPage />} />
         <Route path="/product-detail/0" element={<ProductDetailPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
