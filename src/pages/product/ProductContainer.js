@@ -44,8 +44,8 @@ const ProductContainer = () => {
           </div>
           <div style={{ marginTop: "16px" }}>
             <ProductPriceGroup />
+            <ProductButtonGroup />
           </div>
-          <ProductButtonGroup />
         </div>
       </div>
     </div>

@@ -6,14 +6,14 @@ const ProductPriceGroup = () => {
     display: "flex",
     flexDirection: "column",
     alignItems: "left",
-    marginTop: "40px", // 상품 옵션과의 여백
+    marginTop: "40px",
   };
 
   const priceTextStyle = {
     fontSize: "B1",
     color: COLORS.GRAY_900,
     textAlign: "left",
-    marginBottom: "16px", // 텍스트 아래 여백
+    marginBottom: "16px", 
   };
 
   const priceValueStyle = {
