@@ -4,7 +4,7 @@ import BuyWishIcon from "../../assets/BuyWish.png";
 import BuyLikeIcon from "../../assets/BuyLike.png";
 import { useNavigate } from "react-router-dom";
 
-const ProductItem = ({ name, imageSrc, description, price }) => {
+const ProductItem = ({ name, imageSrc, description, price, index }) => {
     const [isInCart, setIsInCart] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
     const navigate = useNavigate();
@@ -21,7 +21,7 @@ const ProductItem = ({ name, imageSrc, description, price }) => {
 
     const handleProductClick = () => {
         // 해당 제품의 상세 페이지로 이동
-        navigate(`/product-detail/${encodeURIComponent(name)}`);
+        navigate(`/product-detail/${encodeURIComponent(index)}`);
     };
 
 
