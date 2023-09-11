@@ -4,6 +4,7 @@ import Footer from "../../components/footer/Footer";
 import LoginTextBoxComponent from "./LoginTextBox";
 import LoginInput from "./LoginInput";
 import LoginButton from "./LoginButton";
+import SocialGroup from "./SocialGroup";
 
 export default function ProductDetailPage() {
     return (
@@ -16,6 +17,7 @@ export default function ProductDetailPage() {
                 <LoginInput />
             </div>
             <LoginButton />
+            <SocialGroup />
             <Footer />
         </div>
     );
