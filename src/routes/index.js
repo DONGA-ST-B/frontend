@@ -5,6 +5,7 @@ import BuyListPage from "../pages/buyList/BuyListPage";
 import ProductDetailPage from "../pages/product/ProductDetailPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MonitoringPage from "../pages/monitoring/MonitoringPage";
+import LoginPage from "../pages/login/LoginPage";
 
 export default function RootRoute() {
   return (
@@ -15,6 +16,7 @@ export default function RootRoute() {
         <Route path="/footer" element={<Footer />} />
         <Route path="/buy-list" element={<BuyListPage />} />
         <Route path="/product-detail/0" element={<ProductDetailPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );
