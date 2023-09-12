@@ -7,7 +7,7 @@ import LoginButton from "./LoginButton";
 import SocialGroup from "./SocialGroup";
 import LoginBottom from "./LoginBottom";
 
-export default function ProductDetailPage() {
+export default function LoginPage() {
     return (
         <div>
             <Header />
