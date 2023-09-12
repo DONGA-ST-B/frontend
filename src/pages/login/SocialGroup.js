@@ -11,6 +11,10 @@ const SocialGroupWrapper = styled.div`
   flex-direction: row; 
   justify-content: center;
   align-items: center;
+
+  & > *:not(:last-child) {
+    margin-right: 16px;
+  }
 `;
 
 const SocialGroup = () => {

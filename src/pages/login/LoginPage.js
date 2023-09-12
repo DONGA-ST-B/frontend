@@ -5,19 +5,27 @@ import LoginTextBoxComponent from "./LoginTextBox";
 import LoginInput from "./LoginInput";
 import LoginButton from "./LoginButton";
 import SocialGroup from "./SocialGroup";
+import LoginBottom from "./LoginBottom";
 
 export default function ProductDetailPage() {
     return (
         <div>
             <Header />
-            <div style={{ marginTop: "40px" }}>
+            <div style={{ marginTop: "100px" }}>
                 <LoginTextBoxComponent />
             </div>
             <div style={{ marginTop: "40px", marginBottom: "40px" }}>
                 <LoginInput />
             </div>
-            <LoginButton />
-            <SocialGroup />
+            <div style={{ marginBottom: "40px" }}>
+                <LoginButton />
+            </div>
+            <div style={{ marginBottom: "40px" }}>
+                <SocialGroup />
+            </div>
+            <div style={{ marginBottom: "100px" }}>
+                <LoginBottom />
+            </div>
             <Footer />
         </div>
     );

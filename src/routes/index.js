@@ -17,7 +17,6 @@ export default function RootRoute() {
         <Route path="/footer" element={<Footer />} />
         <Route path="/buy-list" element={<BuyListPage />} />
         <Route path="/product/:index" element={<ProductDetailPage />} />{" "}
-        {/* 추가 */}
         <Route path="/holter-solution" element={<HolterPage />} />
         <Route path="/product-detail/0" element={<ProductDetailPage />} />
         <Route path="/login" element={<LoginPage />} />
