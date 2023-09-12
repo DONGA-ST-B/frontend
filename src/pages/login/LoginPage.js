@@ -16,8 +16,12 @@ export default function ProductDetailPage() {
             <div style={{ marginTop: "40px", marginBottom: "40px" }}>
                 <LoginInput />
             </div>
-            <LoginButton />
-            <SocialGroup />
+            <div style={{ marginBottom: "40px" }}>
+                <LoginButton />
+            </div>
+            <div style={{ marginBottom: "40px" }}>
+                <SocialGroup />
+            </div>
             <Footer />
         </div>
     );
