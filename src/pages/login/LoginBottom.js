@@ -1,33 +1,23 @@
-import React from "react";
-import styled from "styled-components";
-import { COLORS } from "../../styles/colors"
-
-const LoginBottomWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-`;
-
-const Separator = styled.div`
-  width: 1px;
-  height: 16px;
-  background-color: ${COLORS.GRAY_300};
-`;
-
-const Text = styled.span`
-  color: ${COLORS.GRAY_600};
-  font-weight: ${TYPOGRAPHY.weight.bold};
-`;
+import React from 'react';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import { COLORS } from '../../styles/colors';
 
 const LoginBottom = () => {
   return (
-    <LoginBottomWrapper>
-      <Text>회원가입</Text>
-      <Separator />
-      <Text>아이디 찾기</Text>
-      <Separator />
-      <Text>비밀번호 찾기</Text>
-    </LoginBottomWrapper>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
+      <Typography variant="body2" color={COLORS.GRAY_600}>
+        회원가입
+      </Typography>
+      <Divider orientation="vertical" flexItem style={{ backgroundColor: COLORS.GRAY_300, height: '20px', margin: '0 8px' }} />
+      <Typography variant="body2" color={COLORS.GRAY_600}>
+        아이디 찾기
+      </Typography>
+      <Divider orientation="vertical" flexItem style={{ backgroundColor: COLORS.GRAY_300, height: '20px', margin: '0 8px' }} />
+      <Typography variant="body2" color={COLORS.GRAY_600}>
+        비밀번호 찾기
+      </Typography>
+    </div>
   );
 };
 
