@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import MainBanner from "./MainBanner";
 
 
 export default function MainPage() {
@@ -8,7 +9,7 @@ export default function MainPage() {
         <div>
             <Header />
             <div style={{ marginTop: "40px", marginBottom: "40px" }}>
-            {/* 컴포넌트 1 */}
+                <MainBanner />
             </div>
             <div style={{ marginBottom: "40px" }}>
             {/* 컴포넌트 2 */}
