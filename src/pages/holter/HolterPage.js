@@ -6,6 +6,9 @@ import Part3 from "./Part3";
 import Part4 from "./Part4";
 import Part5 from "./Part5";
 import Part6 from "./Part6";
+import Part7 from "./Part7";
+import Footer from "../../components/footer/Footer";
+import Part8 from "./Part8";
 
 export default function HolterPage() {
   return (
@@ -17,6 +20,9 @@ export default function HolterPage() {
       <Part4 />
       <Part5 />
       <Part6 />
+      <Part7 />
+      <Part8 />
+      <Footer />
     </div>
   );
 }
