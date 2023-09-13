@@ -5,6 +5,7 @@ import MainBanner from "./MainBanner";
 import MainFirstText from "./MainFirstText";
 import MainAboutItem from "./MainAboutItem";
 import MainAboutGroup from "./MainAboutGroup";
+import MainSelectGroup from "./MainSelectGroup";
 
 
 export default function MainPage() {
@@ -21,7 +22,7 @@ export default function MainPage() {
                 <MainAboutGroup />
             </div>
             <div style={{ marginBottom: "40px" }}>
-            {/* 컴포넌트 4 */}
+                <MainSelectGroup />
             </div>
             <div style={{ marginBottom: "40px" }}>
             {/* 컴포넌트 5 */}
