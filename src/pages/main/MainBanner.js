@@ -49,8 +49,7 @@ const MainBanner = () => {
         loop
         style={videoStyle}
       >
-        <source src="your-video-source.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        <source src="" type="video/mp4" />
       </video>
       <div style={textContainerStyle}>
         <p style={{ ...textStyle, ...responsiveTextStyle }}>하이카디가 24시간 환자의 곁을 지켜드려요</p>
