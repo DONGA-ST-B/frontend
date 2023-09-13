@@ -3,10 +3,9 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import MainBanner from "./MainBanner";
 import MainFirstText from "./MainFirstText";
-import MainAboutItem from "./MainAboutItem";
 import MainAboutGroup from "./MainAboutGroup";
 import MainSelectGroup from "./MainSelectGroup";
-
+import Component4 from "./Component4";
 
 export default function MainPage() {
     return (
@@ -25,8 +24,9 @@ export default function MainPage() {
                 <MainSelectGroup />
             </div>
             <div style={{ marginBottom: "40px" }}>
-            {/* 컴포넌트 5 */}
+                <Component4 />
             </div>
+            <div style={{ marginBottom: "40px" }}>{/* 컴포넌트 5 */}</div>
             <Footer />
         </div>
     );
