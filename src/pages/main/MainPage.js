@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Component4 from "./Component4";
+import Component5 from "./Component5";
+import Slider from "./Temp";
 
 export default function MainPage() {
   return (
@@ -15,7 +17,10 @@ export default function MainPage() {
       <div style={{ marginBottom: "40px" }}>
         <Component4 />
       </div>
-      <div style={{ marginBottom: "40px" }}>{/* 컴포넌트 5 */}</div>
+      <div style={{ marginBottom: "40px" }}>
+        <Component5 />
+        {/* <Slider /> */}
+      </div>
       <Footer />
     </div>
   );
