@@ -1,6 +1,7 @@
 export const COLORS = {
     GRAY_FOOTER_BG: '#131313',
     GRAY_50: '#F4F8FD',
+    GRAY_200: '#E3E7ED',
     GRAY_300: '#D2D7DC',
     GRAY_400: '#AEB3B8',
     GRAY_500: '#8E9398',
