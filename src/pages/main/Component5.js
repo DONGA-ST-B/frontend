@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import temp from "../../assets/holter1.png";
+// import { Fade } from "react-reveal";
 
 // Import Swiper styles
 import "swiper/css";
@@ -47,6 +47,7 @@ export default function Component5() {
   return (
     <WindowBox>
       <Container>
+        {" "}
         <TextBox>
           <FirstText>하이카디 활용 사례</FirstText>
           <SecondText>
@@ -54,7 +55,6 @@ export default function Component5() {
             확인해보세요.
           </SecondText>
         </TextBox>
-
         <CardContainer>
           <Swiper
             spaceBetween={30}

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import img1 from "../../assets/img1.png";
 import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
+// import { Fade } from "react-reveal";
 
 export default function Component4() {
   return (
@@ -11,6 +12,7 @@ export default function Component4() {
         <EntireBox>
           {" "}
           <ComponentBox bgImg={img1}>
+            {" "}
             <TextBox>
               {" "}
               <TopText>하이카디는 간편합니다</TopText>
