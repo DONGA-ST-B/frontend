@@ -40,30 +40,22 @@ export default function Why() {
       <ComponentBox>
         {whyComponent.map((item, index) => (
           <WhyBox key={index}>
-            <NumberBox>{item.number}</NumberBox>
-            <TitleBox>{item.title}</TitleBox>
-            <div>{item.descript}</div>
+            <div>
+              <Line1Text>
+                {" "}
+                <NumberBox>{item.number}</NumberBox>
+                <TitleBox>{item.title}</TitleBox>
+              </Line1Text>
+
+              <WhyDescript>{item.descript}</WhyDescript>
+            </div>
+
             <div>
               <img src={item.img} alt={`why${index + 1}`} />
             </div>
           </WhyBox>
         ))}
       </ComponentBox>
-
-      {/* {whyComponent.map((item, index) => (
-        <WhyBox key={index}>
-          <div>
-            <div>
-              {" "}
-              <div>{item.number}</div>
-              <div>{item.title}</div>
-            </div>
-            <div>{item.descript}</div>
-          </div>
-
-          <img src={item.img} alt={`why${index + 1}`} />
-        </WhyBox>
-      ))} */}
     </TextContainer>
   );
 }
@@ -94,10 +86,20 @@ const TitleText = styled.div`
 const WhyBox = styled.div`
   /* width: 600px;
   height: 200px; */
+  width: 550px;
   flex-shrink: 0;
   border-radius: 20px;
   background: var(--gray-50, #f4f8fd);
   margin: 20px;
+
+  //
+  padding: 40px 45px;
+  box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 50px;
 `;
 
 const ComponentBox = styled.div`
@@ -106,7 +108,7 @@ const ComponentBox = styled.div`
   grid-template-rows: repeat(2, 1fr); /* 2개의 행 */
   justify-content: center;
   margin: 0 auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 70%;
   margin-bottom: 100px;
 `;
@@ -115,7 +117,7 @@ const NumberBox = styled.div`
   color: var(--blue, #18afdd);
   /* H0 */
   font-family: Pretendard;
-  font-size: 36px;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 50.4px */
@@ -125,9 +127,27 @@ const TitleBox = styled.div`
   color: #000;
   /* H0 */
   font-family: Pretendard;
-  font-size: 36px;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 700;
   line-height: 140%; /* 50.4px */
   position: relative;
+`;
+
+const Line1Text = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-bottom: 16px;
+`;
+
+const WhyDescript = styled.div`
+  color: var(--gray-600, #666b6f);
+
+  /* H2 */
+  font-family: Pretendard;
+  font-size: 1.12rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 38.4px */
 `;

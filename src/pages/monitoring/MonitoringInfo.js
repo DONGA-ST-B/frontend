@@ -26,6 +26,7 @@ export default function MonitoringInfo() {
             <TextDescrip>
               의료진이 실시간으로 환자를 더욱 집중 관리할 수 있도록 심전도(ECG),
               호흡, 피부온과 같은 환자의 생리학적 모니터링 정보를 제공합니다.
+              <br />
               국내 유일 심평원 수가를 받은 제품으로 합리적인 비용으로 간편하게
               측정할 수 있습니다.
             </TextDescrip>
@@ -108,12 +109,14 @@ const MiddleText = styled.div`
 `;
 
 const TextDescrip = styled.div`
-  color: var(--gray-500, #8e9398);
+  /* color: var(--gray-500, #8e9398); */
+  color: gray;
   font-family: Pretendard;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 44.8px */
+  /* width: 80%; */
 `;
 
 const TextTitle = styled.div`

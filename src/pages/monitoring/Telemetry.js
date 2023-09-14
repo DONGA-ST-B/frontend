@@ -57,8 +57,8 @@ const BlueText = styled.div`
 const ImgBox = styled.div`
   margin: 0 auto;
 
-  width: 60%;
-  border: 1px solid red;
+  width: 56%;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   gap: 100px;
