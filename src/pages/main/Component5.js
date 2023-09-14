@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
+import temp from "../../assets/holter1.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -10,7 +11,8 @@ export default function Component5() {
     {
       publisher: "MTN 1",
       title: "helloworld",
-      descript: "adlifjaejiflajd;faijeflaijdfiajdifjsdjf",
+      descript:
+        "adlifjaejiflajd;faijeflaijdfiajdifdfjaliejfalisdjfaeijfasiejfilajsldifjsliejfslidjlfsijefjslijeflsijflsijeijsiejfiejfiejfiejjsdjf",
     },
     {
       publisher: "MTN 2",
@@ -85,9 +87,15 @@ export default function Component5() {
               <SwiperSlide>
                 {" "}
                 <CardBox>
-                  <div>{item.publisher}</div>
-                  <div>{item.title}</div>
-                  <div>{item.descript}</div>
+                  <ArticleImg>
+                    <StyledImg src={temp} alt="" />
+                  </ArticleImg>
+                  <ArticleTextBox>
+                    {" "}
+                    <PublisherText>{item.publisher}</PublisherText>
+                    <TitleText>{item.title}</TitleText>
+                    <DescriptText>{item.descript}</DescriptText>
+                  </ArticleTextBox>
                 </CardBox>
               </SwiperSlide>
             ))}
@@ -156,12 +164,12 @@ const CardContainer = styled.div`
 
 const CardBox = styled.div`
   /* width: 300px; */
-  height: 440px;
+  height: 500px;
   border-radius: 30px;
   border: 1px solid var(--gray-200, #e3e7ed);
   background: var(--system-white, #fff);
   box-shadow: 10px 20px 20px 0px rgba(0, 0, 0, 0.15);
-  padding: 40px;
+  /* padding: 40px; */
   overflow: hidden;
 
   transition: transform 0.3s ease; /* transform 속성에 애니메이션 효과 추가 */
@@ -173,4 +181,66 @@ const CardBox = styled.div`
   margin-bottom: 100px;
   margin-left: 24x;
   margin-right: 24px;
+`;
+
+const ArticleImg = styled.div`
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid red; */
+  /* width: 100%; */
+  height: 50%;
+  border-bottom: 1px solid #d3d3d3;
+`;
+
+const StyledImg = styled.img`
+  width: 100%;
+  object-fit: cover;
+`;
+
+const ArticleTextBox = styled.div`
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  text-align: left;
+  margin: 20px;
+  height: 40%;
+`;
+
+const PublisherText = styled.div`
+  color: var(--blue, #18afdd);
+
+  /* H2_B */
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 38.4px */
+`;
+
+const TitleText = styled.div`
+  color: var(--gray-900, #15191d);
+
+  /* H1_B */
+  font-family: Pretendard;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 44.8px */
+`;
+
+const DescriptText = styled.div`
+  color: var(--gray-600, #666b6f);
+
+  /* H3 */
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 32px */
+  /* border: 1px solid black; */
+
+  white-space: normal;
+  overflow-wrap: break-word;
+  overflow: hidden;
 `;
