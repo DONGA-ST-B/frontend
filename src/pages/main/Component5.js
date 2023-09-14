@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import temp from "../../assets/holter1.png";
+import { Fade } from "react-reveal";
 
 // Import Swiper styles
 import "swiper/css";
@@ -47,13 +47,16 @@ export default function Component5() {
   return (
     <WindowBox>
       <Container>
-        <TextBox>
-          <FirstText>하이카디 활용 사례</FirstText>
-          <SecondText>
-            하이카디의 활용 사례가 궁금하시다면? 하이카디의 최신 소식들을
-            확인해보세요.
-          </SecondText>
-        </TextBox>
+        <Fade bottom>
+          {" "}
+          <TextBox>
+            <FirstText>하이카디 활용 사례</FirstText>
+            <SecondText>
+              하이카디의 활용 사례가 궁금하시다면? 하이카디의 최신 소식들을
+              확인해보세요.
+            </SecondText>
+          </TextBox>
+        </Fade>
 
         <CardContainer>
           <Swiper
@@ -79,17 +82,19 @@ export default function Component5() {
             {articleData.map((item, index) => (
               <SwiperSlide>
                 {" "}
-                <CardBox onClick={() => handleCardClick(item.link)}>
-                  <ArticleImg>
-                    <StyledImg src={item.img} alt="" />
-                  </ArticleImg>
-                  <ArticleTextBox>
-                    {" "}
-                    <PublisherText>{item.publisher}</PublisherText>
-                    <TitleText>{item.title}</TitleText>
-                    <DescriptText>{item.descript}</DescriptText>
-                  </ArticleTextBox>
-                </CardBox>
+                <Fade bottom>
+                  <CardBox onClick={() => handleCardClick(item.link)}>
+                    <ArticleImg>
+                      <StyledImg src={item.img} alt="" />
+                    </ArticleImg>
+                    <ArticleTextBox>
+                      {" "}
+                      <PublisherText>{item.publisher}</PublisherText>
+                      <TitleText>{item.title}</TitleText>
+                      <DescriptText>{item.descript}</DescriptText>
+                    </ArticleTextBox>
+                  </CardBox>
+                </Fade>
               </SwiperSlide>
             ))}
           </Swiper>
