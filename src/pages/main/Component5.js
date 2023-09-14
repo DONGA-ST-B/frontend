@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Fade } from "react-reveal";
 
 // Import Swiper styles
 import "swiper/css";
 import axios from "axios";
 
+//
+import { useScrollFadeIn } from "./ScrollFadeIn";
+
 export default function Component5() {
   const [data, setData] = useState([]);
   const [articleData, setArticleData] = useState([]);
+
+  // const fadeInUp = useScrollFadeIn("down", 3, 1);
 
   useEffect(() => {
     const getData = async () => {
@@ -47,7 +51,6 @@ export default function Component5() {
   return (
     <WindowBox>
       <Container>
-        {" "}
         <TextBox>
           <FirstText>하이카디 활용 사례</FirstText>
           <SecondText>
@@ -55,6 +58,7 @@ export default function Component5() {
             확인해보세요.
           </SecondText>
         </TextBox>
+
         <CardContainer>
           <Swiper
             spaceBetween={30}
