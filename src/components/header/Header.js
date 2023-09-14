@@ -5,7 +5,7 @@ import logo from "../../assets/hicardi_logo.png";
 import { Search } from "@mui/icons-material";
 
 export default function Header() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleLoginClick = () => {
     navigate("/login");
@@ -18,8 +18,8 @@ export default function Header() {
         <MenuText>
           <Link to="/">
             <img src={logo} alt="Hicardi" width="130px" />
-            </Link>
-            <a>
+          </Link>
+          <a>
           </a>
           <TextContent>
             <Link to="/" style={{ textDecoration: "none", color: "black" }}>
