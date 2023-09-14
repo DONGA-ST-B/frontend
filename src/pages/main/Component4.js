@@ -3,7 +3,7 @@ import styled from "styled-components";
 import img1 from "../../assets/img1.png";
 import img2 from "../../assets/img2.png";
 import img3 from "../../assets/img3.png";
-import { Fade } from "react-reveal";
+// import { Fade } from "react-reveal";
 
 export default function Component4() {
   return (
@@ -12,40 +12,34 @@ export default function Component4() {
         <EntireBox>
           {" "}
           <ComponentBox bgImg={img1}>
-            <Fade bottom>
+            {" "}
+            <TextBox>
               {" "}
-              <TextBox>
-                {" "}
-                <TopText>하이카디는 간편합니다</TopText>
-                <BottomText>
-                  18g 일체형 하이카디를 부착하기만 하면 <br />
-                  알아서 관리해줍니다.
-                </BottomText>
-              </TextBox>
-            </Fade>
+              <TopText>하이카디는 간편합니다</TopText>
+              <BottomText>
+                18g 일체형 하이카디를 부착하기만 하면 <br />
+                알아서 관리해줍니다.
+              </BottomText>
+            </TextBox>
           </ComponentBox>
           <ComponentBox bgImg={img2}>
-            <Fade bottom>
-              <TextBox>
-                <TopText>하이카디는 믿을 수 있습니다</TopText>
-                <BottomText>
-                  2000명 대상의 대규모 임상시험을 통해 <br />
-                  안전성과 효과성을 입증하였으며, <br />
-                  심평원 수가를 받았습니다.
-                </BottomText>
-              </TextBox>
-            </Fade>
+            <TextBox>
+              <TopText>하이카디는 믿을 수 있습니다</TopText>
+              <BottomText>
+                2000명 대상의 대규모 임상시험을 통해 <br />
+                안전성과 효과성을 입증하였으며, <br />
+                심평원 수가를 받았습니다.
+              </BottomText>
+            </TextBox>
           </ComponentBox>
           <ComponentBox bgImg={img3}>
-            <Fade bottom>
-              <TextBox>
-                <TopText>하이카디는 유일합니다</TopText>
-                <BottomText>
-                  ‘심전도 침상감시’로 수가 청구가 <br />
-                  가능한 국내 유일의 디지털 헬스케어 기기입니다.
-                </BottomText>
-              </TextBox>
-            </Fade>
+            <TextBox>
+              <TopText>하이카디는 유일합니다</TopText>
+              <BottomText>
+                ‘심전도 침상감시’로 수가 청구가 <br />
+                가능한 국내 유일의 디지털 헬스케어 기기입니다.
+              </BottomText>
+            </TextBox>
           </ComponentBox>
         </EntireBox>
       </Container>
