@@ -1,55 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import temp from "../../assets/holter1.png";
 
 // Import Swiper styles
 import "swiper/css";
+import axios from "axios";
 
 export default function Component5() {
-  const card_data = [
-    {
-      publisher: "MTN 1",
-      title: "helloworld",
-      descript:
-        "adlifjaejiflajd;faijeflaijdfiajdifdfjaliejfalisdjfaeijfasiejfilajsldifjsliejfslidjlfsijefjslijeflsijflsijeijsiejfiejfiejfiejjsdjf",
-    },
-    {
-      publisher: "MTN 2",
-      title: "helloworld",
-      descript: "adlifjaejiflajd;faijeflaijdfiajdifjsdjf",
-    },
-    {
-      publisher: "MTN 3",
-      title: "helloworld",
-      descript: "adlifjaejiflajd;faijeflaijdfiajdifjsdjf",
-    },
-    {
-      publisher: "MTN 4",
-      title: "helloworld",
-      descript: "adlifjaejiflajd;faijeflaijdfiajdifjsdjf",
-    },
-    {
-      publisher: "MTN 5",
-      title: "helloworld",
-      descript: "adlifjaejiflajd;faijeflaijdfiajdifjsdjf",
-    },
-    {
-      publisher: "MTN 6",
-      title: "helloworld",
-      descript: "adlifjaejiflajd;faijeflaijdfiajdifjsdjf",
-    },
-  ];
+  const [data, setData] = useState([]);
+  const [articleData, setArticleData] = useState([]);
 
-  // const [animate, setAnimate] = useState(true);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const res = await axios.get(
+          `https://www.kusitms28.shop/api/article/all`
+        );
+        console.log("성공", res.data.message);
+        setData(res.data);
 
-  // const onStop = () => {
-  //   setAnimate(false);
-  // };
+        //
+        const apiData = res.data.data;
+        const extractedData = apiData.map((item) => ({
+          publisher: item.newspaperName,
+          title: item.articleTitle,
+          descript: item.articleContent,
+          img: item.photoUrl,
+          link: item.articleLink,
+        }));
+        setArticleData(extractedData);
+        console.log("articleData:", articleData);
+      } catch (err) {
+        console.error("error:", err);
+      }
+    };
+    getData();
+  }, []);
 
-  // const onRun = () => {
-  //   setAnimate(true);
-  // };
+  const handleCardClick = (link) => {
+    if (link) {
+      window.location.href = link;
+    }
+  };
 
   return (
     <WindowBox>
@@ -83,12 +76,12 @@ export default function Component5() {
             //   },
             // }}
           >
-            {card_data.map((item, index) => (
+            {articleData.map((item, index) => (
               <SwiperSlide>
                 {" "}
-                <CardBox>
+                <CardBox onClick={() => handleCardClick(item.link)}>
                   <ArticleImg>
-                    <StyledImg src={temp} alt="" />
+                    <StyledImg src={item.img} alt="" />
                   </ArticleImg>
                   <ArticleTextBox>
                     {" "}
@@ -176,6 +169,7 @@ const CardBox = styled.div`
 
   &:hover {
     transform: translateY(-48px); /* hover 시에 위로 10px 이동 */
+    cursor: pointer;
   }
   margin-top: 100px;
   margin-bottom: 100px;
@@ -204,7 +198,9 @@ const ArticleTextBox = styled.div`
   /* justify-content: flex-start; */
   text-align: left;
   margin: 20px;
-  height: 40%;
+
+  height: 42%;
+  /* margin-bottom: 1px; */
 `;
 
 const PublisherText = styled.div`
