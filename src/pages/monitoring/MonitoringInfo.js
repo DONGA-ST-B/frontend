@@ -46,9 +46,9 @@ export default function MonitoringInfo() {
 
 const BackImg = styled.div`
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   display: flex;
-  height: 93vh;
+  height: 90vh;
   background-image: url(${monitoring_img});
   background: linear-gradient(
       to right,
@@ -82,7 +82,8 @@ const TextContainer = styled.div`
   /* position: absolute;
   left: 165px;
   top: 234px; */
-  margin: 100px 0 0 0;
+  /* margin: 100px 0 0 0; */
+  margin-left: 100px;
 `;
 
 const BigText = styled.div`
