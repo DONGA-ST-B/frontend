@@ -7,7 +7,6 @@ import MainAboutGroup from "./MainAboutGroup";
 import MainSelectGroup from "./MainSelectGroup";
 import Component4 from "./Component4";
 import Component5 from "./Component5";
-import Slider from "./Temp";
 
 export default function MainPage() {
   return (
