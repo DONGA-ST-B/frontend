@@ -9,6 +9,7 @@ import Page5 from "./Page5";
 import Why from "./Why";
 import Telemetry from "./Telemetry";
 import Footer from "../../components/footer/Footer";
+import Monitoring5 from "./Monitoring5";
 
 export default function MonitoringInfo() {
   return (
@@ -25,6 +26,7 @@ export default function MonitoringInfo() {
             <TextDescrip>
               의료진이 실시간으로 환자를 더욱 집중 관리할 수 있도록 심전도(ECG),
               호흡, 피부온과 같은 환자의 생리학적 모니터링 정보를 제공합니다.
+              <br />
               국내 유일 심평원 수가를 받은 제품으로 합리적인 비용으로 간편하게
               측정할 수 있습니다.
             </TextDescrip>
@@ -35,7 +37,8 @@ export default function MonitoringInfo() {
 
         <StatusMonitoring />
         <LiveStudio />
-        <Page5 />
+        <Monitoring5 />
+        {/* <Page5 /> */}
         <Why />
         <Telemetry />
       </InfoContainer>
@@ -46,9 +49,9 @@ export default function MonitoringInfo() {
 
 const BackImg = styled.div`
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   display: flex;
-  height: 93vh;
+  height: 90vh;
   background-image: url(${monitoring_img});
   background: linear-gradient(
       to right,
@@ -82,7 +85,8 @@ const TextContainer = styled.div`
   /* position: absolute;
   left: 165px;
   top: 234px; */
-  margin: 100px 0 0 0;
+  /* margin: 100px 0 0 0; */
+  margin-left: 100px;
 `;
 
 const BigText = styled.div`
@@ -105,12 +109,14 @@ const MiddleText = styled.div`
 `;
 
 const TextDescrip = styled.div`
-  color: var(--gray-500, #8e9398);
+  /* color: var(--gray-500, #8e9398); */
+  color: gray;
   font-family: Pretendard;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 44.8px */
+  /* width: 80%; */
 `;
 
 const TextTitle = styled.div`

@@ -126,7 +126,6 @@ const SkyButton = styled.div`
 const WhiteButton = styled.div`
   color: var(--gray-900, #15191d);
   text-align: center;
-
   /* B1 b */
   font-family: Pretendard;
   font-size: 0.9rem;

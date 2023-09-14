@@ -11,7 +11,7 @@ export default function StatusMonitoring() {
         <ItemImg src={phone} alt="phone" />
       </div>
 
-      <div>
+      <RightBox>
         <div style={{ marginBottom: "50px" }}>
           {" "}
           <MiddleText>HiCardi SmartView</MiddleText>
@@ -34,9 +34,8 @@ export default function StatusMonitoring() {
             <PatchText>
               {" "}
               <TextDescrip>
-                작고 컴팩트한 무선 디자인으로 흉부에 간편하게 부착할 수
-                있습니다. 특수 소재 전극을 사용해 피부 트러블이 적어 착용 시
-                이물감이 적습니다.
+                스마트 패치에서 전달된 생리학적 데이터를 서버로 전달하는게이트
+                웨이 기능을 수행합니다.
               </TextDescrip>
             </PatchText>
           </PatchBox>
@@ -45,19 +44,18 @@ export default function StatusMonitoring() {
             <PatchText>
               {" "}
               <TextDescrip>
-                IP67 방수 등급을 받아, 샤워 등 일상 생활시에도 지속적인 ECG
-                측정이 가능합니다.
+                앱 스토어에서 누구나 쉽게 다운로드 받아서 사용할 수 있습니다.
               </TextDescrip>
             </PatchText>
           </PatchBox>
         </div>
-      </div>
+      </RightBox>
     </TextContainer>
   );
 }
 
 const TextContainer = styled.div`
-  width: 75%;
+  width: 70%;
   /* border: 1px solid red; */
   display: flex;
   justify-content: center;
@@ -67,7 +65,7 @@ const TextContainer = styled.div`
   /* position: absolute;
   left: 165px;
   top: 234px; */
-  gap: 100px;
+  gap: 160px;
   margin: 150px 0 150px 0;
 `;
 
@@ -83,7 +81,7 @@ const MiddleText = styled.div`
 const TextDescrip = styled.div`
   /* color: var(--gray-500, #8e9398); */
   font-family: Pretendard;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 44.8px */
@@ -99,7 +97,7 @@ const TextTitle = styled.div`
 `;
 
 const PatchBox = styled.div`
-  width: 80%;
+  width: 98%;
   display: flex;
   align-items: flex-start;
   gap: 40px;
@@ -116,6 +114,9 @@ const PatchText = styled.div`
 `;
 
 const ItemImg = styled.img`
-  width: 100%;
+  width: 90%;
+  /* display: flex;
+  justify-content: center; */
   /* border: 1px solid red; */
 `;
+const RightBox = styled.div``;

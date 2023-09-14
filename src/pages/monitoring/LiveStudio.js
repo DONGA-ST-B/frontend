@@ -23,7 +23,8 @@ export default function LiveStudio() {
           <RightBox>
             <img src={blue_circle} alt="" />
             <DescriptText>
-              부정맥 등 이벤트 발생 시, 시각/오디오 알림을 지원합니다.
+              아마존클라우드서비스(AWS)웹에서 가동되는 소프트웨어로, 별도의
+              프로그램을 설치할 필요가 없습니다.
             </DescriptText>
           </RightBox>
         </LineBox>
@@ -33,13 +34,15 @@ export default function LiveStudio() {
           <LeftBox>
             <img src={blue_circle} alt="" />
             <DescriptText>
-              부정맥 등 이벤트 발생 시, 시각/오디오 알림을 지원합니다.
+              환자상태에 따라, 이벤트 알림을 개별 설정할 수 있어 효율적인 환자별
+              맞춤 관리가 가능합니다.
             </DescriptText>
           </LeftBox>
           <RightBox>
             <img src={blue_circle} alt="" />
             <DescriptText>
-              부정맥 등 이벤트 발생 시, 시각/오디오 알림을 지원합니다.
+              의료진이 실시간으로 최대 128명 환자의 상태를 동시에 모니터링 할 수
+              있습니다.
             </DescriptText>
           </RightBox>
         </LineBox>
@@ -97,6 +100,7 @@ const DescriptText = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 32px */
+  /* border: 1px solid red; */
 `;
 
 const LeftBox = styled.div`
@@ -104,6 +108,9 @@ const LeftBox = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: 16px;
+  /* border: 1px solid red; */
+  width: 460px;
+  text-align: right;
 `;
 
 const RightBox = styled.div`
@@ -111,11 +118,15 @@ const RightBox = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+  /* border: 1px solid blue; */
+  width: 460px;
+  text-align: left;
 `;
 
 const LineBox = styled.div`
   display: flex;
-  margin-top: 92px;
-  margin-bottom: 33px;
+  margin-top: 72px;
+  margin-bottom: 36px;
   justify-content: space-between;
+  /* border: 1px solid black; */
 `;
