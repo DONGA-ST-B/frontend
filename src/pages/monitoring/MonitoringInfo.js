@@ -9,6 +9,7 @@ import Page5 from "./Page5";
 import Why from "./Why";
 import Telemetry from "./Telemetry";
 import Footer from "../../components/footer/Footer";
+import Monitoring5 from "./Monitoring5";
 
 export default function MonitoringInfo() {
   return (
@@ -35,7 +36,8 @@ export default function MonitoringInfo() {
 
         <StatusMonitoring />
         <LiveStudio />
-        <Page5 />
+        <Monitoring5 />
+        {/* <Page5 /> */}
         <Why />
         <Telemetry />
       </InfoContainer>

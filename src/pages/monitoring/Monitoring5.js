@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import img1 from "../../assets/icon1.png";
-import img2 from "../../assets/icon2.png";
-import img3 from "../../assets/icon3.png";
+import img2 from "../../assets/monitor_icon2.png";
+import img3 from "../../assets/monitor_icon3.png";
 import nextIcon from "../../assets/ion_chevron-back.svg";
 
-export default function Part5() {
+export default function Monitoring5() {
   return (
     <WindowBox>
       <Container>
-        <InsideTitle>하이카디 부정맥 검사 프로세스</InsideTitle>
+        <InsideTitle>이제 하이카디로 손 쉽게 검사할 수 있어요</InsideTitle>
         <RowBox>
           {" "}
           <UnderBox>
@@ -17,7 +17,8 @@ export default function Part5() {
               <StyledImg src={img1} alt="" />
             </WhiteCircle>
             <CircleText>
-              하이카디 스마트패치를 부착하여 <br></br>15가지 유형의 부정맥 탐지
+              하이카디 스마트패치를 통해 <br></br>환자의 생리학적 데이터 실시간
+              측정
             </CircleText>
           </UnderBox>
           <img src={nextIcon} alt="" />
@@ -26,7 +27,7 @@ export default function Part5() {
               <StyledImg src={img2} alt="" />
             </WhiteCircle>
             <CircleText>
-              AI 자동분석 이후 원격 판독 의뢰하여 <br></br>부정맥 소견 작성
+              모바일 앱으로<br></br> 환자의 실시간 상태 모니터링
             </CircleText>
           </UnderBox>
           <img src={nextIcon} alt="" />
@@ -35,7 +36,9 @@ export default function Part5() {
               <StyledImg src={img3} alt="" />
             </WhiteCircle>
             <CircleText>
-              검사 결과를 기반으로<br></br> 최종 레포트 발행
+              클라우드(AWS)에서 가동되는<br></br>소프트웨어로 환자의 상태
+              모니터링<br></br>
+              <CircleSubText>(동시에 최대 128명까지 가능)</CircleSubText>
             </CircleText>
           </UnderBox>
         </RowBox>
@@ -46,12 +49,14 @@ export default function Part5() {
 
 const WindowBox = styled.div`
   background-color: #18afdd;
+  width: 100%;
   display: flex;
   margin: 0;
 `;
 
 const Container = styled.div`
   /* background-color: skyblue; */
+  width: 100%;
   align-items: center;
   height: 100vh;
   margin: 0 auto;
@@ -60,6 +65,7 @@ const Container = styled.div`
   justify-content: center;
   text-align: center;
 `;
+
 const InsideTitle = styled.div`
   color: var(--system-white, #fff);
   text-align: center;
@@ -91,13 +97,23 @@ const WhiteCircle = styled.div`
 `;
 
 const CircleText = styled.div`
-  color: var(--system-white, #fff);
-  text-align: center;
+  color: var(--backdround_grey, #f8f8f8);
   font-family: S-Core Dream;
   font-size: 1.3rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 42.622px; /* 152.222% */
+  line-height: 42.622px;
+  letter-spacing: -0.735px;
+`;
+
+const CircleSubText = styled.div`
+  font-size: 1rem;
+  color: var(--gray-100, #edf1f7);
+  font-family: S-Core Dream;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 42.622px;
   letter-spacing: -0.735px;
 `;
 
