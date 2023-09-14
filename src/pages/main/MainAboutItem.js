@@ -2,7 +2,7 @@ import React from 'react';
 import { COLORS } from '../../styles/colors';
 
 const containerStyle = {
-  width: '425px',
+  width: '400px',
   height: '605px',
   display: 'flex',
   flexDirection: 'column',
@@ -10,7 +10,7 @@ const containerStyle = {
 };
 
 const imageStyle = {
-  width: '425px',
+  width: '400px',
   height: '400px',
   borderRadius: '20px',
   marginBottom: '48px',
