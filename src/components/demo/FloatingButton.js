@@ -12,6 +12,7 @@ export default function FloatingButton() {
 }
 
 const FloatButton = styled.div`
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;

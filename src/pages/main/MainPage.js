@@ -9,6 +9,7 @@ import Component4 from "./Component4";
 import Component5 from "./Component5";
 import FloatingButton from "../../components/demo/FloatingButton";
 import DemoModal from "../../components/demo/DemoModal";
+import InitialDemo from "../../components/demo/InitialDemo";
 
 export default function MainPage() {
   return (
@@ -32,7 +33,9 @@ export default function MainPage() {
       <div style={{ marginBottom: "40px" }}>
         <Component5 />
       </div>
-      <DemoModal />
+      <InitialDemo />
+      {/* <DemoModal /> */}
+
       <FloatingButton />
       <Footer />
     </div>
