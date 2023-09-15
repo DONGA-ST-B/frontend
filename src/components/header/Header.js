@@ -16,9 +16,10 @@ export default function Header() {
       <LeftBox>
         <MenuText>
           <Link to="/">
-            <img src={logo} alt="Hicardi" width="180px" />
+            <img src={logo} alt="Hicardi" width="130px" />
           </Link>
-
+          <a>
+          </a>
           <TextContent>
             <StyledLink to="/">서비스 소개</StyledLink>
             <SubMenu>
