@@ -1,5 +1,6 @@
 import React from 'react';
 import { COLORS } from '../../styles/colors';
+import BannerVideo from '../../assets/BannerVideo.mp4'
 
 const bannerStyle = {
   position: 'relative',
@@ -49,7 +50,7 @@ const MainBanner = () => {
         loop
         style={videoStyle}
       >
-        <source src="" type="video/mp4" />
+        <source src={BannerVideo} type="video/mp4" />
       </video>
       <div style={textContainerStyle}>
         <p style={{ ...textStyle, ...responsiveTextStyle }}>하이카디가 24시간 환자의 곁을 지켜드려요</p>
