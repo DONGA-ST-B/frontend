@@ -11,6 +11,10 @@ export default function Header() {
     navigate("/login");
   };
 
+  const handleBuyClick = () => {
+    navigate("/buy-list");
+  };
+
   return (
     <HeaderBox>
       <LeftBox>
@@ -31,7 +35,7 @@ export default function Header() {
               </SubStyledLink>
             </SubMenu>
           </TextContent>
-          <TextContent>구매하기</TextContent>
+          <TextContent onClick={handleBuyClick}>구매하기</TextContent>
           <TextContent>FAQ</TextContent>
           <TextContent>
             <StyledLink to="">게시판</StyledLink>
