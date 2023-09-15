@@ -1,88 +1,114 @@
 import React, { Children, useState } from "react";
 import styled from "styled-components";
 import CheckBox from "./CheckBox";
+import { Close } from "@mui/icons-material";
+import CompleteDemo from "./CompleteDemo";
 
-const DemoModal = () => {
+const DemoModal = (props) => {
   const [firstCheck, setFirstCheck] = useState(false);
   const [secondCheck, setSecondCheck] = useState(false);
   const [thirdCheck, setThirdCheck] = useState(false);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDemo = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <ModalContainer>
-      <TextBox>
-        <TitleText>데모 신청하기</TitleText>
-        <CheckBoxContainer>
-          <label>
-            <PerCheck>
-              {" "}
-              <CheckText>HiCardi</CheckText>
-              <CheckBox
-                checked={firstCheck}
-                onChange={setFirstCheck}
-              ></CheckBox>
-            </PerCheck>{" "}
-          </label>
-          <label>
-            <PerCheck>
-              <CheckText>HiCardi+</CheckText>
-              <CheckBox
-                checked={secondCheck}
-                onChange={setSecondCheck}
-              ></CheckBox>{" "}
-            </PerCheck>
-          </label>
-          <label>
-            <PerCheck>
-              {" "}
-              <CheckText>HiCardi+ H100</CheckText>
-              <CheckBox
-                checked={thirdCheck}
-                onChange={setThirdCheck}
-              ></CheckBox>{" "}
-            </PerCheck>
-          </label>
-        </CheckBoxContainer>
-        <InputBox>
-          <PerBox>
-            <InputTitle>이름</InputTitle>
-            <StyledInput
-              type="text"
-              name="name"
-              placeholder="이름을 입력해주세요."
-            />
-          </PerBox>{" "}
-          <PerBox>
-            <InputTitle>소속</InputTitle>
-            <StyledInput
-              type="text"
-              name="name"
-              placeholder="소속 회사 또는 병원명을 입력해 주세요."
-            />
-          </PerBox>{" "}
-          <PerBox>
-            <InputTitle>이메일</InputTitle>
-            <StyledInput
-              type="text"
-              name="name"
-              placeholder="이메일을 입력해주세요."
-            />
-          </PerBox>{" "}
-          <PerBox>
-            <InputTitle>연락처</InputTitle>
-            <StyledInput
-              type="text"
-              name="name"
-              placeholder="연락처를 입력해주세요."
-            />
-          </PerBox>
-          <ApplyButton disabled={!firstCheck || !secondCheck || !thirdCheck}>
-            신청하기
-          </ApplyButton>
-        </InputBox>
-      </TextBox>
-    </ModalContainer>
+    <>
+      {" "}
+      <ModalContainer show={props.show}>
+        <ExitIcon onClick={props.onClick}>
+          <Close />
+        </ExitIcon>
+        <TextBox>
+          <TitleText>데모 신청하기</TitleText>
+          <CheckBoxContainer>
+            <label>
+              <PerCheck>
+                {" "}
+                <CheckText>HiCardi</CheckText>
+                <CheckBox
+                  checked={firstCheck}
+                  onChange={setFirstCheck}
+                ></CheckBox>
+              </PerCheck>{" "}
+            </label>
+            <label>
+              <PerCheck>
+                <CheckText>HiCardi+</CheckText>
+                <CheckBox
+                  checked={secondCheck}
+                  onChange={setSecondCheck}
+                ></CheckBox>{" "}
+              </PerCheck>
+            </label>
+            <label>
+              <PerCheck>
+                {" "}
+                <CheckText>HiCardi+ H100</CheckText>
+                <CheckBox
+                  checked={thirdCheck}
+                  onChange={setThirdCheck}
+                ></CheckBox>{" "}
+              </PerCheck>
+            </label>
+          </CheckBoxContainer>
+          <InputBox>
+            <PerBox>
+              <InputTitle>이름</InputTitle>
+              <StyledInput
+                type="text"
+                name="name"
+                placeholder="이름을 입력해주세요."
+              />
+            </PerBox>{" "}
+            <PerBox>
+              <InputTitle>소속</InputTitle>
+              <StyledInput
+                type="text"
+                name="name"
+                placeholder="소속 회사 또는 병원명을 입력해 주세요."
+              />
+            </PerBox>{" "}
+            <PerBox>
+              <InputTitle>이메일</InputTitle>
+              <StyledInput
+                type="text"
+                name="name"
+                placeholder="이메일을 입력해주세요."
+              />
+            </PerBox>{" "}
+            <PerBox>
+              <InputTitle>연락처</InputTitle>
+              <StyledInput
+                type="text"
+                name="name"
+                placeholder="연락처를 입력해주세요."
+              />
+            </PerBox>
+            <ApplyButton
+              onClick={toggleDemo}
+              disabled={!firstCheck && !secondCheck && !thirdCheck}
+            >
+              신청하기
+            </ApplyButton>
+          </InputBox>
+        </TextBox>
+      </ModalContainer>
+      {isOpen && <CompleteDemo show={isOpen} onClick={toggleDemo} />}
+    </>
   );
 };
+const ExitIcon = styled.div`
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 18px;
+  top: 20px;
+  cursor: pointer;
+`;
 
 const ModalContainer = styled.div`
   position: fixed;
@@ -94,6 +120,7 @@ const ModalContainer = styled.div`
   border-radius: 30px;
   background: #fff;
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 `;
 
 const TextBox = styled.div`
@@ -131,6 +158,7 @@ const PerBox = styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 8px;
+  margin-bottom: 4px;
   /* border: 1px solid red; */
 `;
 
