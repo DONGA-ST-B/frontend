@@ -36,7 +36,7 @@ export default function MainPage() {
       </div>
       {/* <InitialDemo /> */}
       {/* <DemoModal /> */}
-      <CompleteDemo />
+      {/* <CompleteDemo /> */}
       <FloatingButton />
       <Footer />
     </div>
