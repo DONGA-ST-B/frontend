@@ -1,26 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import { COLORS } from "../../styles/colors";
+import MinusButton from "../../assets/MinusButton.png";
+import PlusButton from "../../assets/PlusButton.png";
 
 const SelectProduct = () => {
+  const [quantity, setQuantity] = useState(1);
+
   const newComponentStyle = {
-    width: "100%",
+    width: "90%",
     height: "140px",
     borderRadius: "20px",
     backgroundColor: "#F4F8FD",
-    marginTop: "16px", // 선택한 메뉴와 간격 조절
+    marginTop: "16px",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
+    padding: "0 16px",
   };
 
-  const textStyle = {
-    color: COLORS.GRAY_600,
-    fontSize: "B1",
+  const leftTextStyle = {
+    fontSize: "20px",
+    color: COLORS.GRAY_900,
+    fontWeight: "bold",
+    marginLeft: "16px",
+  };
+
+  const optionTextStyle = {
+    fontSize: "16px",
+    color: COLORS.GRAY_900,
+    marginLeft: "16px",
+  };
+
+  const iconGroupStyle = {
+    display: "flex",
+    alignItems: "center",
+    margin: "40px", 
+  };
+
+  const iconStyle = {
+    width: "32px",
+    height: "32px",
+    color: COLORS.BLACK,
+    cursor: "pointer",
+    margin: "8px", 
+  };
+
+  const quantityStyle = {
+    fontSize: "24px",
+    fontWeight: "bold",
+    color: COLORS.BLACK,
+  };
+
+  const handleDecrease = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  const handleIncrease = () => {
+    setQuantity(quantity + 1);
   };
 
   return (
     <div style={newComponentStyle}>
-      <span style={textStyle}>이 새로운 컴포넌트 내용</span>
+      <div>
+        <div style={leftTextStyle}>하이카디플러스 HiCardi+</div>
+        <div style={optionTextStyle}>갤럭시 A13 (+275,000원)</div>
+      </div>
+      <div style={iconGroupStyle}>
+        <img onClick={handleDecrease} style={iconStyle} src={MinusButton} alt="Minus" />
+        <span style={quantityStyle}>{quantity}</span>
+        <img onClick={handleIncrease} style={iconStyle} src={PlusButton} alt="Plus" />
+      </div>
     </div>
   );
 };

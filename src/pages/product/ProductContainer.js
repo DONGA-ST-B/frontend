@@ -1,6 +1,6 @@
 import React from "react";
 import ProductImage from "../../assets/ProductDetailIamge.png";
-import ProductTextBox from "./ProductTextBox";
+import ProductTextBox from "./ProductBox";
 import ProductOption from "./ProductOption";
 import ProductPriceGroup from "./ProductPriceGroup";
 import ProductButtonGroup from "./ProductButtonGroup";
