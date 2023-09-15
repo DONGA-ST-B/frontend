@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { COLORS } from "../../styles/colors";
 
-const ProductPriceGroup = () => {
+const ProductPriceGroup = ({ selectedOptionPrice }) => {
+  const totalProductPrice = selectedOptionPrice; // 총 상품 금액
+
+
   const componentStyle = {
     display: "flex",
     flexDirection: "column",
@@ -13,7 +16,7 @@ const ProductPriceGroup = () => {
     fontSize: "B1",
     color: COLORS.GRAY_900,
     textAlign: "left",
-    marginBottom: "16px", 
+    marginBottom: "16px",
   };
 
   const priceValueStyle = {
@@ -22,10 +25,11 @@ const ProductPriceGroup = () => {
     color: COLORS.GRAY_900,
   };
 
+
   return (
     <div style={componentStyle}>
       <div style={priceTextStyle}>
-        총 상품 금액: <span style={priceValueStyle}>0원</span>
+        총 상품 금액: <span style={priceValueStyle}>{totalProductPrice}원</span>
       </div>
     </div>
   );

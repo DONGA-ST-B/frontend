@@ -3,10 +3,12 @@ import { COLORS } from "../../styles/colors";
 import ArrowDown from "../../assets/ArrowDown.png";
 import SelectProduct from "./SelectProduct";
 
-const ProductOption = () => {
+const ProductOption = ({ onPriceIncrease }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuHeight, setMenuHeight] = useState(0);
+
+
   const optionStyle = {
     position: "relative",
     borderRadius: "27.5px",
@@ -57,12 +59,14 @@ const ProductOption = () => {
     setMenuHeight(menuHeight === 0 ? 500 : 0);
   };
 
-  const handleMenuItemClick = (option) => {
+  const handleMenuItemClick = (option, price) => {
     setSelectedOption(option);
     setIsMenuOpen(false);
     setMenuHeight(0);
+    onPriceIncrease(price); // 선택한 옵션의 가격을 부모 컴포넌트로 전달
   };
 
+  
    return (
     <div style={{ ...optionStyle, minHeight: isMenuOpen ? "auto" : "64px" }}>
       {selectedOption ? (
@@ -85,7 +89,7 @@ const ProductOption = () => {
           선택 안 함
         </div>
         <div
-          onClick={() => handleMenuItemClick("갤럭시 A13 (+275,000원)")}
+          onClick={() => handleMenuItemClick("갤럭시 A13 (+275,000원)", 275000)}
           style={menuItemStyle}
         >
           갤럭시 A13 (+275,000원)

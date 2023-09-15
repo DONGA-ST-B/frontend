@@ -3,8 +3,9 @@ import { COLORS } from "../../styles/colors";
 import MinusButton from "../../assets/MinusButton.png";
 import PlusButton from "../../assets/PlusButton.png";
 
-const SelectProduct = () => {
+const SelectProduct = ({ onPriceIncrease }) => { // onPriceIncrease 함수를 props로 받음
   const [quantity, setQuantity] = useState(1);
+
 
   const newComponentStyle = {
     width: "90%",
