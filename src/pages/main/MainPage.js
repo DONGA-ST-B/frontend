@@ -10,6 +10,7 @@ import Component5 from "./Component5";
 import FloatingButton from "../../components/demo/FloatingButton";
 import DemoModal from "../../components/demo/DemoModal";
 import InitialDemo from "../../components/demo/InitialDemo";
+import CompleteDemo from "../../components/demo/CompleteDemo";
 
 export default function MainPage() {
   return (
@@ -33,9 +34,9 @@ export default function MainPage() {
       <div style={{ marginBottom: "40px" }}>
         <Component5 />
       </div>
-      <InitialDemo />
+      {/* <InitialDemo /> */}
       {/* <DemoModal /> */}
-
+      <CompleteDemo />
       <FloatingButton />
       <Footer />
     </div>

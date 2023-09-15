@@ -35,7 +35,7 @@ const InitialDemo = () => {
               </OrderCircle>
             </CircleBox>
           </PerBox>
-          <ApplyButton>신청하기</ApplyButton>
+          <ApplyButton>다음</ApplyButton>
         </InputBox>
       </TextBox>
     </ModalContainer>
@@ -159,7 +159,6 @@ const CircleBox = styled.div`
 
 const CircleText = styled.div`
   color: var(--gray-500, #8e9398);
-  font-family: Pretendard;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -176,6 +175,7 @@ const OrderCircle = styled.div`
   flex-shrink: 0;
   /* fill: var(--gray-50, #f4f8fd); */
   background-color: #f4f8fd;
+  /* background-color: #e9f7ff; */
   border-radius: 100%;
   display: flex;
   justify-content: center;
