@@ -12,9 +12,9 @@ const MainSelectGroupWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 16px; /* 위 아래 여백 60px, 좌우 여백 반응형 조절 */
-  gap: 48px; /* 아이템 컴포넌트 사이 간격 48px */
   
+  padding: 0px 16px; /* 위 아래 여백 60px, 좌우 여백 반응형 조절 */
+
   @media (min-width: 768px) {
     padding: 60px 162px; /* 화면이 768px 이상일 때 좌우 여백 162px로 변경 */
   }
@@ -22,43 +22,45 @@ const MainSelectGroupWrapper = styled.div`
 
 const MainSelectRow = styled.div`
   display: flex;
-  gap: 48px; /* MainSelectItem 컴포넌트 간격 48px */
-  margin-top: 54px; /* 위쪽 여백 54px */
+  flex-direction: column; /* 화면이 작을 때 세로로 쌓이도록 변경 */
+  margin-top: 24px; /* 위쪽 여백 24px */
+  width: 100%; /* 화면 너비에 따라 컨텐츠 가득 차도록 설정 */
+
+  @media (min-width: 768px) {
+    flex-direction: row; /* 화면이 768px 이상일 때 가로로 정렬 */
+    gap: 48px; /* MainSelectItem 컴포넌트 간격 48px */
+  }
 `;
 
 const MainSelectGroup = () => {
     return (
         <MainSelectGroupWrapper>
-            <div style={{ display: 'flex' }}>
-                <MainSelectRow>
-
-                    <MainSelectItem
-                        why={true}
-                        image={Logo}
-                    />
-                    <MainSelectItem
-                        why={false}
-                        image={Select1}
-                        title="높은 방수 등급 (IP67)"
-                        content={(
-                            <>
-                                하이카디는 높은 방수 등급 (IP67)을 가진<br />식약처 및 CE 인증 제품입니다.<br />간단한 샤워가 가능하여 탈착하지<br />않으므로 검사의 정확도가 월등합니다.
-                            </>
-                        )}
-                    />
-                    <MainSelectItem
-                        why={false}
-                        image={Select2}
-                        title="선형 모델의 구조적 문제 해결"
-                        content={(
-                            <>
-                                선형 모델은 선을 건드릴 경우<br />노이즈가 발생하여 데이터 정확도가<br />떨어지거나 탈착 가능성이 높습니다.<br />하이카디는 일체형 모델이므로<br />이러한 단점을 보완했습니다.
-                            </>
-                        )}
-                    />
-                </MainSelectRow>
-
-            </div>
+            <MainSelectRow>
+                <MainSelectItem
+                    why={true}
+                    image={Logo}
+                />
+                <MainSelectItem
+                    why={false}
+                    image={Select1}
+                    title="높은 방수 등급 (IP67)"
+                    content={(
+                        <>
+                            하이카디는 높은 방수 등급 (IP67)을 가진<br />식약처 및 CE 인증 제품입니다.<br />간단한 샤워가 가능하여 탈착하지<br />않으므로 검사의 정확도가 월등합니다.
+                        </>
+                    )}
+                />
+                <MainSelectItem
+                    why={false}
+                    image={Select2}
+                    title="선형 모델의 구조적 문제 해결"
+                    content={(
+                        <>
+                            선형 모델은 선을 건드릴 경우<br />노이즈가 발생하여 데이터 정확도가<br />떨어지거나 탈착 가능성이 높습니다.<br />하이카디는 일체형 모델이므로<br />이러한 단점을 보완했습니다.
+                        </>
+                    )}
+                />
+            </MainSelectRow>
             <MainSelectRow>
                 <MainSelectItem
                     why={false}
