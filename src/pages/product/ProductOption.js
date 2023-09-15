@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { COLORS } from "../../styles/colors";
 import ArrowDown from "../../assets/ArrowDown.png";
+import SelectProduct from "./SelectProduct";
 
 const ProductOption = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [menuHeight, setMenuHeight] = useState(0); // 초기 메뉴 높이를 0으로 설정
-
+  const [menuHeight, setMenuHeight] = useState(0);
   const optionStyle = {
     position: "relative",
     borderRadius: "27.5px",
@@ -18,7 +18,7 @@ const ProductOption = () => {
     flexDirection: "column", // 세로로 아이템 배치
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "0 20px",
+    padding: "20px 20px",
     marginRight: "16px",
     overflow: "hidden", // 내용이 넘치면 숨김
     transition: "min-height 0.3s ease", // 애니메이션 속성 추가
@@ -26,7 +26,6 @@ const ProductOption = () => {
 
   const textStyle = {
     color: COLORS.GRAY_600,
-    marginTop: "16px",
     marginBottom: "16px"
   };
 
@@ -52,6 +51,7 @@ const ProductOption = () => {
     textAlign: "center",
   };
 
+
   const handleOptionClick = () => {
     setIsMenuOpen(!isMenuOpen);
     setMenuHeight(menuHeight === 0 ? 500 : 0);
@@ -60,22 +60,21 @@ const ProductOption = () => {
   const handleMenuItemClick = (option) => {
     setSelectedOption(option);
     setIsMenuOpen(false);
-    setMenuHeight(0); 
+    setMenuHeight(0);
   };
 
-  return (
+   return (
     <div style={{ ...optionStyle, minHeight: isMenuOpen ? "auto" : "64px" }}>
       {selectedOption ? (
-        <span>{selectedOption}</span>
+        <div>
+          <span>{selectedOption}</span>
+         
+        </div>
       ) : (
         <span style={textStyle}>- [필수] 옵션을 선택해 주세요 -</span>
       )}
       <div onClick={handleOptionClick}>
-        <img
-          src={ArrowDown}
-          alt="Options"
-          style={iconStyle}
-        />
+        <img src={ArrowDown} alt="Options" style={iconStyle} />
       </div>
       <div style={{ ...menuStyle, maxHeight: `${menuHeight}px` }}>
         <hr style={{ margin: "0" }} />
@@ -92,8 +91,12 @@ const ProductOption = () => {
           갤럭시 A13 (+275,000원)
         </div>
       </div>
+      {selectedOption === "갤럭시 A13 (+275,000원)" && (
+        <SelectProduct />
+      )}
     </div>
   );
 };
+
 
 export default ProductOption;
