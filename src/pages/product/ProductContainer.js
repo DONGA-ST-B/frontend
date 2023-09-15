@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductImage from "../../assets/ProductDetailIamge.png";
 import ProductTextBox from "./ProductBox";
 import ProductOption from "./ProductOption";
@@ -6,6 +6,8 @@ import ProductPriceGroup from "./ProductPriceGroup";
 import ProductButtonGroup from "./ProductButtonGroup";
 
 const ProductContainer = () => {
+  const [selectedOptionPrice, setSelectedOptionPrice] = useState(0);
+
   const productInfo = {
     productName: "제품명",
     productNameEnglish: "Product Name",
@@ -18,6 +20,12 @@ const ProductContainer = () => {
     flexDirection: "row", // 수평으로 정렬
     alignItems: "center", // 중앙 정렬
     padding: "16px", // 모든 화면 크기에 패딩 적용
+  };
+
+
+
+  const handlePriceIncrease = (amount) => {
+    setSelectedOptionPrice(selectedOptionPrice + amount); // 선택한 옵션의 가격을 더해 총 상품 금액을 업데이트
   };
 
   const leftSideStyle = {
@@ -46,12 +54,12 @@ const ProductContainer = () => {
       </div>
       <div style={rightSideStyle}>
         <div className="text-box" style={{ width: "100%" }}>
-          <ProductTextBox {...productInfo} />
+           <ProductTextBox {...productInfo} />
+           <div style={{ marginTop: "16px", marginRight: "100px" }}>
+        <ProductOption onPriceIncrease={handlePriceIncrease} />
+      </div>
           <div style={{ marginTop: "16px", marginRight: "100px" }}>
-            <ProductOption />
-          </div>
-          <div style={{ marginTop: "16px", marginRight: "100px" }}>
-            <ProductPriceGroup />
+            <ProductPriceGroup selectedOptionPrice={selectedOptionPrice} />
             <ProductButtonGroup />
           </div>
         </div>
