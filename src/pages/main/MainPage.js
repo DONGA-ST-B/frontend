@@ -14,16 +14,16 @@ export default function MainPage() {
   return (
     <div>
       <Header />
-      <div style={{ marginTop: "40px", marginBottom: "180px" }}>
+      <div style={{marginBottom: "180px" }}>
         <MainBanner />
       </div>
       <div style={{ marginBottom: "40px" }}>
         <MainFirstText />
       </div>
-      <div style={{ marginBottom: "40px" }}>
+      <div style={{ marginBottom: "40px", marginLeft: "40px", marginRight: "40px" }}>
         <MainAboutGroup />
       </div>
-      <div style={{ marginBottom: "40px" }}>
+      <div style={{ marginBottom: "40px", marginLeft: "40px", marginRight: "40px" }}>
         <MainSelectGroup />
       </div>
       <div style={{ marginBottom: "40px" }}>

@@ -3,13 +3,13 @@ import { COLORS } from '../../styles/colors';
 
 const itemStyle = {
     width: '500px',
-    height: '602px',
+    height: '450px',
     borderRadius: '30px',
     border: `2px solid ${COLORS.GRAY_200}`,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    padding: '40px',
+    padding: '0px',
     boxSizing: 'border-box',
     position: 'relative', // 부모 요소로부터의 상대 위치 설정
 };
@@ -27,8 +27,8 @@ const imageStyle2 = {
     position: 'absolute',
     top: '60px', // 이미지의 위치를 조정
     left: '40px', // 좌측 여백 40px
-    width: '120px', // 이미지 넓이 120px로 설정
-    height: '120px', // 이미지 높이 120px로 설정
+    width: '90px', // 이미지 넓이 120px로 설정
+    height: '90px', // 이미지 높이 120px로 설정
 };
 
 const style1 = {
@@ -41,7 +41,7 @@ const style1 = {
 
 const style2 = {
     background: COLORS.WHITE,
-    marginBottom: '0px', // 여백을 0px로 설정
+    marginBottom: '60px', // 여백을 0px로 설정
     position: 'relative', // 부모 요소로부터의 상대 위치 설정
 };
 
@@ -52,14 +52,14 @@ const textContainerStyle = {
 };
 
 const titleStyle = {
-    fontSize: '32px',
+    fontSize: '28px',
     fontWeight: 'bold',
     color: COLORS.GRAY_900,
     marginBottom: '40px', // title과 content 사이 간격 설정
 };
 
 const contentStyle = {
-    fontSize: '24px',
+    fontSize: '18px',
     color: COLORS.GRAY_700,
     marginBottom: '40px', // title과 content 사이 간격 설정
 };
