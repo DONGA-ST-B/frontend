@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CheckBox from "./CheckBox";
 import { Close } from "@mui/icons-material";
 import CompleteDemo from "./CompleteDemo";
+import axios from "axios";
 
 const DemoModal = (props) => {
   const [firstCheck, setFirstCheck] = useState(false);
@@ -13,6 +14,51 @@ const DemoModal = (props) => {
 
   const toggleDemo = () => {
     setIsOpen(!isOpen);
+  };
+
+  //신청폼 관련 상태 정리
+  const [type, setType] = useState("");
+  const [name, setName] = useState("");
+  const [depart, setDepart] = useState("");
+  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
+
+  //input field 상태 관리
+  const [isNameEmpty, setIsNameEmpty] = useState(true);
+  const [isDepartEmpty, setIsDepartEmpty] = useState(true);
+  const [isEmailEmpty, setIsEmailEmpty] = useState(true);
+  const [isContactEmpty, setIsContactEmpty] = useState(true);
+
+  const [isRegister, setIsRegister] = useState(false);
+
+  const registerDemo = () => {
+    axios
+      .post("https://www.kusitms28.shop/api/demo", {
+        type: type,
+        name: name,
+        department: depart,
+        email: email,
+        contact: contact,
+      })
+      .then((res) => {
+        console.log("res.data:", res.data.message);
+        console.log("신청 완료");
+        alert(res.data.message);
+        if (res.data.isSuccess == true) {
+          setIsRegister(true);
+        }
+      })
+      .catch((err) => {
+        console.log("err:", err);
+      });
+
+    // 모든 입력 필드가 비어있는지 여부를 검사
+    // const allFieldsNotEmpty =
+    //   !isNameEmpty && !isDepartEmpty && !isEmailEmpty && !isContactEmpty;
+
+    // if (res.data.isSuccess === true && allFieldsNotEmpty) {
+    //   setIsRegister(true);
+    // }
   };
 
   return (
@@ -62,6 +108,11 @@ const DemoModal = (props) => {
                 type="text"
                 name="name"
                 placeholder="이름을 입력해주세요."
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  // setIsNameEmpty(e.target.value === "");
+                }}
               />
             </PerBox>{" "}
             <PerBox>
@@ -70,6 +121,11 @@ const DemoModal = (props) => {
                 type="text"
                 name="name"
                 placeholder="소속 회사 또는 병원명을 입력해 주세요."
+                value={depart}
+                onChange={(e) => {
+                  setDepart(e.target.value);
+                  // setIsDepartEmpty(e.target.value === "");
+                }}
               />
             </PerBox>{" "}
             <PerBox>
@@ -78,6 +134,11 @@ const DemoModal = (props) => {
                 type="text"
                 name="name"
                 placeholder="이메일을 입력해주세요."
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  // setIsEmailEmpty(e.target.value === "");
+                }}
               />
             </PerBox>{" "}
             <PerBox>
@@ -86,18 +147,37 @@ const DemoModal = (props) => {
                 type="text"
                 name="name"
                 placeholder="연락처를 입력해주세요."
+                value={contact}
+                onChange={(e) => {
+                  setContact(e.target.value);
+                  // setIsContactEmpty(e.target.value === "");
+                }}
               />
             </PerBox>
             <ApplyButton
-              onClick={toggleDemo}
-              disabled={!firstCheck && !secondCheck && !thirdCheck}
+              onClick={() => {
+                console.log("신청하기 버튼 클릭됨");
+                registerDemo();
+
+                // if (isRegister) {
+                //   console.log("isRegister이 true임");
+                // }
+              }}
+              // disabled={
+              //   !firstCheck || !secondCheck || !thirdCheck
+              //   // {
+              //   //   /* !isNameEmpty ||
+              //   // !isDepartEmpty ||
+              //   // !isEmailEmpty ||
+              //   // !isContactEmpty */
+              //   // }
+              // }
             >
               신청하기
             </ApplyButton>
           </InputBox>
         </TextBox>
       </ModalContainer>
-      {isOpen && <CompleteDemo show={isOpen} onClick={toggleDemo} />}
     </>
   );
 };
