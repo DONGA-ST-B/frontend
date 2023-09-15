@@ -3,10 +3,10 @@ import React from "react";
 import styled from "styled-components";
 import { Close } from "@mui/icons-material";
 
-const CompleteDemo = () => {
+const CompleteDemo = (props) => {
   return (
-    <ModalContainer>
-      <ExitIcon>
+    <ModalContainer show={props.show}>
+      <ExitIcon onClick={props.onClick}>
         <Close />
       </ExitIcon>
       <TextBox>

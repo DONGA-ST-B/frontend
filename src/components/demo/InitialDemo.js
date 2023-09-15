@@ -1,46 +1,74 @@
 import React, { Children, useState } from "react";
 import styled from "styled-components";
+import { Close } from "@mui/icons-material";
+import DemoModal from "./DemoModal";
 
-const InitialDemo = () => {
+const InitialDemo = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [showDemoModal, setShowDemoModal] = useState(false);
+
+  const toggleDemo = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const toggleDemoModal = () => {
+    setShowDemoModal(!showDemoModal);
+  };
+
   return (
-    <ModalContainer>
-      <TextBox>
-        <TitleText>데모 신청하기</TitleText>
+    <>
+      {" "}
+      <ModalContainer show={props.show}>
+        <ExitIcon onClick={props.onClick}>
+          <Close />
+        </ExitIcon>
+        <TextBox>
+          <TitleText>데모 신청하기</TitleText>
 
-        <InputBox>
-          <PerBox>
-            <InputTitle>데모</InputTitle>
-            <DesText>
-              관심있는 제품을 선택하여 데모를 신청하실 수 있습니다.데모 신청 시
-              제공해 주신 연락처로 상담사가 안내 연락을 드릴 예정입니다.
-            </DesText>
-          </PerBox>
-          <PerBox>
-            <InputTitle>데모 기간 : 2-4주</InputTitle>
-          </PerBox>
-          <PerBox>
-            <InputTitle>진행 절차</InputTitle>
-            <CircleBox>
-              <OrderCircle>
-                <CircleText>데모 신청</CircleText>
-              </OrderCircle>
-              <OrderCircle>
-                <CircleText>장비 선정 및 일정 조율</CircleText>
-              </OrderCircle>
-              <OrderCircle>
-                <CircleText>장비 전달/사용자 교육</CircleText>
-              </OrderCircle>
-              <OrderCircle>
-                <CircleText>데모 종료 후 장비 회수</CircleText>
-              </OrderCircle>
-            </CircleBox>
-          </PerBox>
-          <ApplyButton>다음</ApplyButton>
-        </InputBox>
-      </TextBox>
-    </ModalContainer>
+          <InputBox>
+            <PerBox>
+              <InputTitle>데모</InputTitle>
+              <DesText>
+                관심있는 제품을 선택하여 데모를 신청하실 수 있습니다.데모 신청
+                시 제공해 주신 연락처로 상담사가 안내 연락을 드릴 예정입니다.
+              </DesText>
+            </PerBox>
+            <PerBox>
+              <InputTitle>데모 기간 : 2-4주</InputTitle>
+            </PerBox>
+            <PerBox>
+              <InputTitle>진행 절차</InputTitle>
+              <CircleBox>
+                <OrderCircle>
+                  <CircleText>데모 신청</CircleText>
+                </OrderCircle>
+                <OrderCircle>
+                  <CircleText>장비 선정 및 일정 조율</CircleText>
+                </OrderCircle>
+                <OrderCircle>
+                  <CircleText>장비 전달/사용자 교육</CircleText>
+                </OrderCircle>
+                <OrderCircle>
+                  <CircleText>데모 종료 후 장비 회수</CircleText>
+                </OrderCircle>
+              </CircleBox>
+            </PerBox>
+            <ApplyButton onClick={toggleDemo}>다음</ApplyButton>
+          </InputBox>
+        </TextBox>
+      </ModalContainer>
+      {isOpen && <DemoModal show={isOpen} onClick={toggleDemo} />}
+    </>
   );
 };
+const ExitIcon = styled.div`
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 18px;
+  top: 20px;
+  cursor: pointer;
+`;
 
 const ModalContainer = styled.div`
   position: fixed;
@@ -62,6 +90,9 @@ const TextBox = styled.div`
   align-items: center;
   gap: 40px;
   padding: 44px 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* border: 1px solid red; */
 `;
 
 const TitleText = styled.div`
