@@ -9,8 +9,11 @@ import About4 from "../../assets/About4.png";
 const MainAboutGroupContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 10px 10px;
+  justify-content: center;
+  margin: 30px 30px;
+  /* border: 1px solid red; */
+  width: 100%;
+  gap: 40px;
 `;
 
 const itemsData = [
