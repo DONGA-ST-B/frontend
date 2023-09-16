@@ -1,28 +1,43 @@
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import ProductImage from "../../assets/ProductDetailIamge.png";
 import ProductTextBox from "./ProductBox";
 import ProductOption from "./ProductOption";
 import ProductPriceGroup from "./ProductPriceGroup";
 import ProductButtonGroup from "./ProductButtonGroup";
+import FetchProductInfo from "./FetchProductInfo"; // API 호출 함수 가져오기
 
-const ProductContainer = () => {
+const ProductContainer = ({ productId }) => {
+  const [productInfo, setProductInfo] = useState(null);
   const [selectedOptionPrice, setSelectedOptionPrice] = useState(0);
 
-  const productInfo = {
-    productName: "제품명",
-    productNameEnglish: "Product Name",
-    description: "설명설명설명",
-    price: "가격",
-  };
+  // productId가 변경될 때마다 API 호출
+  useEffect(() => {
+    const getProductInfo = async () => {
+      const data = await FetchProductInfo(productId);
+      if (data) {
+        setProductInfo(data);
+      }
+    };
+
+    getProductInfo();
+  }, [productId]);
+
+  // productInfo가 로드되지 않은 경우 로딩 상태를 표시
+  if (!productInfo) {
+    return <div>Loading...</div>;
+  }
+
+  // ProductBox 컴포넌트에 필요한 정보 추출
+  const { productName, productNameEnglish, description, price } = productInfo;
+
 
   const containerStyle = {
     display: "flex",
-    flexDirection: "row", // 수평으로 정렬
-    alignItems: "center", // 중앙 정렬
-    padding: "16px", // 모든 화면 크기에 패딩 적용
+    flexDirection: "row",
+    alignItems: "center",
+    padding: "16px",
   };
-
-
 
   const handlePriceIncrease = (amount) => {
     setSelectedOptionPrice(selectedOptionPrice + amount); // 선택한 옵션의 가격을 더해 총 상품 금액을 업데이트
@@ -47,6 +62,7 @@ const ProductContainer = () => {
     },
   };
 
+
   return (
     <div style={{ ...containerStyle, ...responsiveStyle }}>
       <div style={leftSideStyle}>
@@ -54,14 +70,8 @@ const ProductContainer = () => {
       </div>
       <div style={rightSideStyle}>
         <div className="text-box" style={{ width: "100%" }}>
-           <ProductTextBox {...productInfo} />
-           <div style={{ marginTop: "16px", marginRight: "100px" }}>
-        <ProductOption onPriceIncrease={handlePriceIncrease} />
-      </div>
-          <div style={{ marginTop: "16px", marginRight: "100px" }}>
-            <ProductPriceGroup selectedOptionPrice={selectedOptionPrice} />
-            <ProductButtonGroup />
-          </div>
+          <ProductTextBox {...productInfo} />
+          {/* 나머지 코드는 이전과 동일 */}
         </div>
       </div>
     </div>

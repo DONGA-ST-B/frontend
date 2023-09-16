@@ -15,7 +15,7 @@ export default function RootRoute() {
         <Route path="/monitoring-solution" element={<MonitoringPage />} />
         <Route path="/buy-list" element={<BuyListPage />} />
         <Route path="/holter-solution" element={<HolterPage />} />
-        <Route path="/product-detail/0" element={<ProductDetailPage />} />
+        <Route path="/product-detail/:productId" element={<ProductDetailPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
