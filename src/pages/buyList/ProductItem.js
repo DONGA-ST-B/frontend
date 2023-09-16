@@ -20,7 +20,6 @@ const ProductItem = ({ name, imageSrc, description, price, index }) => {
     };
 
     const handleProductClick = () => {
-        // 해당 제품의 상세 페이지로 이동
         navigate(`/product-detail/${encodeURIComponent(index)}`);
     };
 
@@ -128,7 +127,7 @@ const styles = {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        marginTop: "40px", // 메뉴 그룹을 아래로 붙임
+        marginTop: "40px",
     },
 
     iconGroup: {
