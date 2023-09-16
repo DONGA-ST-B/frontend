@@ -9,6 +9,7 @@ import MainPage from "../pages/main/MainPage";
 import SearchPage from "../search/SearchPage";
 import ArticleSearch from "../search/ArticleSearch";
 import ArticlePage from "../search/ArticlePage";
+import GoogleLogin from "../pages/login/GoogleLogin";
 
 export default function RootRoute() {
   return (
@@ -23,6 +24,7 @@ export default function RootRoute() {
 
         <Route path="/search" element={<SearchPage />} />
         <Route path="/search/article" element={<ArticlePage />} />
+        <Route path="/google-login" element={<GoogleLogin />} />
       </Routes>
     </BrowserRouter>
   );
