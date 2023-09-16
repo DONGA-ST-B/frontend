@@ -5,21 +5,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const TopBar = () => {
-  //tap
-
-  const [tap1, setTap1] = useState("tap1_true");
-  const [tap2, setTap2] = useState("tap2_false");
-
-  const tapBar1 = () => {
-    setTap1("tap1_true");
-    setTap2("tap2_false");
-  };
-
-  const tapBar2 = () => {
-    setTap1("tap1_false");
-    setTap2("tap2_true");
-  };
-
   const [keyword, setKeyword] = useState("");
   const [product, setProduct] = useState([]);
 
@@ -42,6 +27,31 @@ const TopBar = () => {
       });
   };
 
+  const [text, setText] = useState("");
+  const [article, setArticle] = useState([]);
+
+  const handleSearchArticle = () => {
+    axios
+      .post("https://www.kusitms28.shop/api/search/Article", {
+        keyword: text,
+      })
+      .then((res) => {
+        console.log("res.data:", res.data);
+        setArticle(res.data);
+        console.log("product:", article);
+      })
+      .catch((err) => {
+        console.log("err:", err);
+      });
+  };
+
+  const handleTabClick = () => {
+    handleSearchArticle(); // 기사 데이터 가져오기
+    navigate("/search/article");
+  };
+
+  const [activeTab, setActiveTab] = useState("product"); // 기본값은 "product"
+
   return (
     <TopBox>
       <WhiteButton>
@@ -53,41 +63,63 @@ const TopBar = () => {
             console.log(keyword);
             setKeyword(e.target.value);
           }}
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              handleSearch();
+            }
+          }}
         />
         <Search onClick={handleSearch} />
       </WhiteButton>
-      <MenuTapBox>
-        <NavLink
-          to="/search"
-          type="button"
-          style={{
-            textDecoration: "none",
-            borderRadius: "50px",
-            marginRight: "20px",
-            border: "1px solid red",
-          }}
+      <MenuTabBox>
+        {" "}
+        <MenuTab
+          onClick={() => setActiveTab("product")} // 제품을 클릭하면 activeTab을 "product"로 설정
+          active={activeTab === "product"} // activeTab이 "product"인 경우 true, 아닌 경우 false
         >
-          제품
-        </NavLink>
-        <NavLink
-          to="/search/article"
-          border="0px none"
-          type="button"
-          style={{
-            textDecoration: "none",
-            borderRadius: "50px",
-            marginRight: "20px",
-          }}
+          <NavLink
+            to="/search"
+            type="button"
+            style={{
+              textDecoration: "none",
+              color: "black",
+              width: "100%",
+              borderBottom:
+                activeTab === "product"
+                  ? "2px solid var(--blue, #18afdd)"
+                  : "none", // activeTab에 따라 배경색 변경
+            }}
+          >
+            제품
+          </NavLink>
+        </MenuTab>{" "}
+        <MenuTab
+          onClick={() => setActiveTab("article")} // 기사를 클릭하면 activeTab을 "article"로 설정
+          active={activeTab === "article"} // activeTab이 "article"인 경우 true, 아닌 경우 false
         >
-          기사
-        </NavLink>
-      </MenuTapBox>
+          <NavLink
+            to="/search/article"
+            type="button"
+            style={{
+              textDecoration: "none",
+              color: "black",
+              width: "100%",
+              borderBottom:
+                activeTab === "article"
+                  ? "2px solid var(--blue, #18afdd)"
+                  : "none", // activeTab에 따라 배경색 변경
+            }}
+          >
+            기사
+          </NavLink>
+        </MenuTab>
+      </MenuTabBox>
     </TopBox>
   );
 };
 
 const TopBox = styled.div`
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,7 +133,7 @@ const SearchInputField = styled.input`
   border: none;
   /* border: 1px solid red; */
   outline: none;
-  width: 500px;
+  width: 100%;
   padding-left: 10px;
   padding-right: 10px;
   text-align: left;
@@ -135,16 +167,40 @@ const WhiteButton = styled.div`
   margin: 0 auto;
 `;
 
-const MenuTapBox = styled.div`
-  border: 1px solid red;
+const MenuTabBox = styled.div`
+  /* border: 1px solid red; */
 
   //
   display: flex;
+
+  /* width: 200px; */
   /* width: 380px; */
-  padding: 4px 120px;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+`;
+
+const MenuTab = styled.div`
+  /* border: 1px solid blue; */
+  display: flex;
+  width: 100%;
+  padding: 4px;
   justify-content: center;
   align-items: center;
   gap: 8px;
+  /* border-bottom: 2px solid var(--blue, #18afdd); */
+  color: var(--gray-900, #15191d);
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  /* B2 b */
+  font-family: Pretendard;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 25.6px */
+  letter-spacing: 0.064px;
 `;
 
 export default TopBar;

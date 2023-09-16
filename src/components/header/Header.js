@@ -106,6 +106,11 @@ export default function Header() {
                 console.log(keyword);
                 setKeyword(e.target.value);
               }}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  handleSearch();
+                }
+              }}
             />
             <Search onClick={handleSearch} />
           </WhiteButton>
