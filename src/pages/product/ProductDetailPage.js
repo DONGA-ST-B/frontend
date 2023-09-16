@@ -11,7 +11,7 @@ export default function ProductDetailPage() {
     <div>
       <Header />
       <div>
-        <ProductContainer productId={productId} />
+        <ProductContainer productId={productId}  />
       </div>
       <Footer />
     </div>

@@ -62,7 +62,6 @@ const ProductContainer = ({ productId }) => {
     },
   };
 
-
   return (
     <div style={{ ...containerStyle, ...responsiveStyle }}>
       <div style={leftSideStyle}>
@@ -71,7 +70,13 @@ const ProductContainer = ({ productId }) => {
       <div style={rightSideStyle}>
         <div className="text-box" style={{ width: "100%" }}>
           <ProductTextBox {...productInfo} />
-          {/* 나머지 코드는 이전과 동일 */}
+           <div style={{ marginTop: "16px", marginRight: "100px" }}>
+        <ProductOption onPriceIncrease={handlePriceIncrease} />
+      </div>
+          <div style={{ marginTop: "16px", marginRight: "100px" }}>
+            <ProductPriceGroup selectedOptionPrice={selectedOptionPrice} />
+            <ProductButtonGroup />
+          </div>
         </div>
       </div>
     </div>
