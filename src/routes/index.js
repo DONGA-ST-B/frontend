@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BuyListPage from "../pages/buyList/BuyListPage";
 import ProductDetailPage from "../pages/product/ProductDetailPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -7,6 +7,9 @@ import HolterPage from "../pages/holter/HolterPage";
 import LoginPage from "../pages/login/LoginPage";
 import MainPage from "../pages/main/MainPage";
 import WishListPage from "../pages/wishList/WishListPage";
+import SearchPage from "../search/SearchPage";
+import ArticleSearch from "../search/ArticleSearch";
+import ArticlePage from "../search/ArticlePage";
 
 export default function RootRoute() {
   return (
@@ -19,6 +22,8 @@ export default function RootRoute() {
         <Route path="/product-detail/:productId" element={<ProductDetailPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/wish" element={<WishListPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/search/article" element={<ArticlePage />} />
       </Routes>
     </BrowserRouter>
   );
