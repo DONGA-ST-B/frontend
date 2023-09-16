@@ -32,9 +32,19 @@ const DemoModal = (props) => {
   const [isRegister, setIsRegister] = useState(false);
 
   const registerDemo = () => {
+    //체크박스 type 설정
+    let selectedType = "";
+    if (firstCheck) {
+      selectedType = "Hicardi";
+    } else if (secondCheck) {
+      selectedType = "Hicardi+";
+    } else if (thirdCheck) {
+      selectedType = "Hicardi+ H100";
+    }
+
     axios
       .post("https://www.kusitms28.shop/api/demo", {
-        type: type,
+        type: selectedType,
         name: name,
         department: depart,
         email: email,
@@ -47,12 +57,13 @@ const DemoModal = (props) => {
         if (res.data.isSuccess == true) {
           setIsRegister(true);
         }
+        console.log(selectedType);
       })
       .catch((err) => {
         console.log("err:", err);
       });
 
-    // 모든 입력 필드가 비어있는지 여부를 검사
+    //모든 입력 필드가 비어있는지 여부를 검사
     // const allFieldsNotEmpty =
     //   !isNameEmpty && !isDepartEmpty && !isEmailEmpty && !isContactEmpty;
 
@@ -77,7 +88,7 @@ const DemoModal = (props) => {
                 <CheckText>HiCardi</CheckText>
                 <CheckBox
                   checked={firstCheck}
-                  onChange={setFirstCheck}
+                  onChange={() => setFirstCheck(!firstCheck)}
                 ></CheckBox>
               </PerCheck>{" "}
             </label>
@@ -86,7 +97,7 @@ const DemoModal = (props) => {
                 <CheckText>HiCardi+</CheckText>
                 <CheckBox
                   checked={secondCheck}
-                  onChange={setSecondCheck}
+                  onChange={() => setSecondCheck(!secondCheck)}
                 ></CheckBox>{" "}
               </PerCheck>
             </label>
@@ -96,7 +107,7 @@ const DemoModal = (props) => {
                 <CheckText>HiCardi+ H100</CheckText>
                 <CheckBox
                   checked={thirdCheck}
-                  onChange={setThirdCheck}
+                  onChange={() => setThirdCheck(!thirdCheck)}
                 ></CheckBox>{" "}
               </PerCheck>
             </label>
@@ -111,7 +122,7 @@ const DemoModal = (props) => {
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
-                  // setIsNameEmpty(e.target.value === "");
+                  setIsNameEmpty(e.target.value === "");
                 }}
               />
             </PerBox>{" "}
@@ -124,7 +135,7 @@ const DemoModal = (props) => {
                 value={depart}
                 onChange={(e) => {
                   setDepart(e.target.value);
-                  // setIsDepartEmpty(e.target.value === "");
+                  setIsDepartEmpty(e.target.value === "");
                 }}
               />
             </PerBox>{" "}
@@ -137,7 +148,7 @@ const DemoModal = (props) => {
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
-                  // setIsEmailEmpty(e.target.value === "");
+                  setIsEmailEmpty(e.target.value === "");
                 }}
               />
             </PerBox>{" "}
@@ -150,7 +161,7 @@ const DemoModal = (props) => {
                 value={contact}
                 onChange={(e) => {
                   setContact(e.target.value);
-                  // setIsContactEmpty(e.target.value === "");
+                  setIsContactEmpty(e.target.value === "");
                 }}
               />
             </PerBox>
@@ -158,20 +169,23 @@ const DemoModal = (props) => {
               onClick={() => {
                 console.log("신청하기 버튼 클릭됨");
                 registerDemo();
+                // if (
+                //   !isNameEmpty &&
+                //   !isDepartEmpty &&
+                //   !isEmailEmpty &&
+                //   !isContactEmpty
+                // ) {
+                //   console.log("신청하기 버튼 클릭됨");
+                //   registerDemo();
+                // } else {
+                //   alert("모든 필드를 작성해주세요.");
+                //   console.log("모든 필드를 작성해주세요.");
+                // }
 
                 // if (isRegister) {
                 //   console.log("isRegister이 true임");
                 // }
               }}
-              // disabled={
-              //   !firstCheck || !secondCheck || !thirdCheck
-              //   // {
-              //   //   /* !isNameEmpty ||
-              //   // !isDepartEmpty ||
-              //   // !isEmailEmpty ||
-              //   // !isContactEmpty */
-              //   // }
-              // }
             >
               신청하기
             </ApplyButton>
