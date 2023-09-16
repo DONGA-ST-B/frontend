@@ -6,6 +6,7 @@ import MonitoringPage from "../pages/monitoring/MonitoringPage";
 import HolterPage from "../pages/holter/HolterPage";
 import LoginPage from "../pages/login/LoginPage";
 import MainPage from "../pages/main/MainPage";
+import SearchPage from "../search/SearchPage";
 
 export default function RootRoute() {
   return (
@@ -17,6 +18,8 @@ export default function RootRoute() {
         <Route path="/holter-solution" element={<HolterPage />} />
         <Route path="/product-detail/0" element={<ProductDetailPage />} />
         <Route path="/login" element={<LoginPage />} />
+
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </BrowserRouter>
   );
