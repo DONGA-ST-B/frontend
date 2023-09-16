@@ -13,7 +13,7 @@ const ProductOption = ({ onPriceIncrease }) => {
     position: "relative",
     borderRadius: "27.5px",
     width: "100%",
-    minHeight: "64px", // 최소 높이를 설정
+    minHeight: "64px", 
     border: "1px solid #E0E0E0",
     backgroundColor: "white",
     display: "flex",
