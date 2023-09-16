@@ -1,27 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { COLORS } from "../../styles/colors";
 import MinusButton from "../../assets/MinusButton.png"
 import PlusButton from "../../assets/PlusButton.png"
 
-const WishItem = () => {
-    const [quantity, setQuantity] = useState(1); // quantity 상태와 setQuantity 함수를 정의
+const WishItem = ({ item }) => {
+    const [quantity, setQuantity] = useState(1);
 
     const wishItemStyle = {
         display: "flex",
         alignItems: "center",
-        marginBottom: "24px", // 텍스트 박스 밑 여백
+        marginBottom: "24px",
     };
 
     const imageStyle = {
         width: "110px",
         height: "110px",
-        marginRight: "40px", // 이미지와 텍스트 박스 사이 여백
+        marginRight: "40px",
     };
 
     const textBoxStyle = {
-        flex: 1, // 텍스트 박스가 남은 공간을 차지하도록 설정
+        flex: 1,
     };
-
 
     const iconGroupStyle = {
         display: "flex",
@@ -51,8 +51,7 @@ const WishItem = () => {
         fontSize: "24px",
         fontWeight: "bold",
         color: COLORS.BLACK,
-      };
-    
+    };
 
     const handleDecrease = () => {
         if (quantity > 1) {
@@ -68,12 +67,12 @@ const WishItem = () => {
         <div style={wishItemStyle}>
             <img
                 style={imageStyle}
-                src="이미지 URL" // 실제 이미지 URL로 대체
+                src={item.product.photoUrl}
                 alt="Product"
             />
             <div style={textBoxStyle}>
-                <div style={productNameStyle}>제품명</div>
-                <div style={optionNameStyle}>옵션 명</div>
+                <div style={productNameStyle}>{item.product.productName}</div>
+                <div style={optionNameStyle}>{item.product.optionName}</div>
                 <div style={iconGroupStyle}>
                     <img onClick={handleDecrease} style={iconStyle} src={MinusButton} alt="Minus" />
                     <span style={quantityStyle}>{quantity}</span>
@@ -84,4 +83,30 @@ const WishItem = () => {
     );
 };
 
-export default WishItem;
+const WishListPage = () => {
+    const [cartData, setCartData] = useState(null);
+
+    const fetchCartData = () => {
+        axios.get(`https://www.kusitms28.shop/api/cart/1`)
+            .then((response) => {
+                setCartData(response.data);
+            })
+            .catch((error) => {
+                console.error("API 요청 중 에러 발생:", error);
+            });
+    };
+
+    useEffect(() => {
+        fetchCartData();
+    }, []);
+
+    return (
+        <div>
+            {cartData && cartData.cartItems.map((item) => (
+                <WishItem key={item.id} item={item} />
+            ))}
+        </div>
+    );
+};
+
+export default WishListPage;
