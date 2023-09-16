@@ -22,8 +22,7 @@ export default function Header() {
           <Link to="/">
             <img src={logo} alt="Hicardi" width="130px" />
           </Link>
-          <a>
-          </a>
+          <a></a>
           <TextContent>
             <StyledLink to="/">서비스 소개</StyledLink>
             <SubMenu>
@@ -228,7 +227,7 @@ const SubStyledLink = styled(Link)`
 const StyledInput = styled.input`
   border: none;
   outline: none;
-
+  width: 200px;
   padding-left: 10px;
   padding-right: 10px;
   text-align: left;
