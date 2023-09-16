@@ -8,6 +8,7 @@ import LoginPage from "../pages/login/LoginPage";
 import MainPage from "../pages/main/MainPage";
 import SearchPage from "../search/SearchPage";
 import ArticleSearch from "../search/ArticleSearch";
+import ArticlePage from "../search/ArticlePage";
 
 export default function RootRoute() {
   return (
@@ -21,7 +22,7 @@ export default function RootRoute() {
         <Route path="/login" element={<LoginPage />} />
 
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/search/article" element={<ArticleSearch />} />
+        <Route path="/search/article" element={<ArticlePage />} />
       </Routes>
     </BrowserRouter>
   );

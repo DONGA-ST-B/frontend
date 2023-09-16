@@ -33,12 +33,14 @@ const TopBar = () => {
   const handleSearchArticle = () => {
     axios
       .post("https://www.kusitms28.shop/api/search/Article", {
-        keyword: text,
+        keyword: keyword,
       })
       .then((res) => {
-        console.log("res.data:", res.data);
+        console.log("기사: res.data:", res.data);
         setArticle(res.data);
-        console.log("product:", article);
+        console.log("article:", article);
+
+        navigate("/search/article", { state: res.data });
       })
       .catch((err) => {
         console.log("err:", err);
@@ -87,14 +89,17 @@ const TopBar = () => {
               borderBottom:
                 activeTab === "product"
                   ? "2px solid var(--blue, #18afdd)"
-                  : "none", // activeTab에 따라 배경색 변경
+                  : "2px solid #d3d3d3", // activeTab에 따라 배경색 변경
             }}
           >
             제품
           </NavLink>
         </MenuTab>{" "}
         <MenuTab
-          onClick={() => setActiveTab("article")} // 기사를 클릭하면 activeTab을 "article"로 설정
+          onClick={() => {
+            setActiveTab("article");
+            handleTabClick();
+          }} // 기사를 클릭하면 activeTab을 "article"로 설정
           active={activeTab === "article"} // activeTab이 "article"인 경우 true, 아닌 경우 false
         >
           <NavLink
@@ -107,7 +112,7 @@ const TopBar = () => {
               borderBottom:
                 activeTab === "article"
                   ? "2px solid var(--blue, #18afdd)"
-                  : "none", // activeTab에 따라 배경색 변경
+                  : "2px solid #d3d3d3", // activeTab에 따라 배경색 변경
             }}
           >
             기사
@@ -178,14 +183,14 @@ const MenuTabBox = styled.div`
   padding: 4px;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  /* gap: 30px; */
 `;
 
 const MenuTab = styled.div`
   /* border: 1px solid blue; */
   display: flex;
   width: 100%;
-  padding: 4px;
+  /* padding: 4px; */
   justify-content: center;
   align-items: center;
   gap: 8px;

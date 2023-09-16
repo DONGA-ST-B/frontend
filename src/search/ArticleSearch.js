@@ -3,40 +3,34 @@ import styled from "styled-components";
 import TopBar from "./TopBar";
 import axios from "axios";
 import Header from "../components/header/Header";
+import { useLocation } from "react-router-dom";
 
-const ArticleSearch = ({ article }) => {
-  //   const [text, setText] = useState("");
-  //   const [article, setArticle] = useState([]);
+const ArticleSearch = () => {
+  const loc = useLocation();
+  console.log("loc.state:", loc.state);
 
-  //   const handleSearch = () => {
-  //     axios
-  //       .post("https://www.kusitms28.shop/api/search/Article", {
-  //         keyword: text,
-  //       })
-  //       .then((res) => {
-  //         console.log("res.data:", res.data);
-  //         setArticle(res.data);
-  //         console.log("product:", article);
-  //       })
-  //       .catch((err) => {
-  //         console.log("err:", err);
-  //       });
-  //   };
+  const articleData = loc.state;
 
   return (
-    <>
-      <Header />
-      <ProductContainer>
-        <TopBar />
-        {article &&
-          article.map((item, index) => (
-            <div key={index}>
-              <h2>{item.title}</h2>
-              <p>{item.content}</p>
-            </div>
+    <ProductContainer>
+      <TopBar />
+      <SearchItemContainer>
+        {articleData &&
+          articleData.map((item, index) => (
+            <SearchItem key={index}>
+              <ItemImgBox>
+                {" "}
+                <ItemImg src={item.imageURL} />
+              </ItemImgBox>
+              <ItemTextBox>
+                {" "}
+                <ItemTitle>{item.title}</ItemTitle>
+                <ItemContent>{item.content}</ItemContent>
+              </ItemTextBox>
+            </SearchItem>
           ))}
-      </ProductContainer>
-    </>
+      </SearchItemContainer>
+    </ProductContainer>
   );
 };
 
@@ -61,31 +55,21 @@ const SearchItemContainer = styled.div`
   align-items: center;
   margin: 0 auto;
 
-  gap: 15px;
+  gap: 50px;
 `;
 
 const SearchItem = styled.div`
   /* border: 1px solid red; */
-  width: 100%;
+  /* width: 100%; */
   gap: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const TopBox = styled.div`
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 70%;
-  height: 200px;
-  margin: 0 auto;
-`;
-
 const ItemImg = styled.img`
-  width: 240px;
-  height: 240px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
 `;
 
@@ -95,8 +79,8 @@ const ItemImgBox = styled.div`
 
 const ItemTextBox = styled.div`
   display: flex;
-  /* width: 486px; */
-  width: 500px;
+  width: 486px;
+  /* width: 80%; */
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
@@ -110,13 +94,12 @@ const ItemTextBox = styled.div`
 const ItemTitle = styled.div`
   color: var(--gray-900, #15191d);
 
-  /* B1 b */
+  /* H3_B */
   font-family: Pretendard;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 140%; /* 25.2px */
-  letter-spacing: 0.072px;
+  line-height: 160%; /* 32px */
 `;
 
 const ItemContent = styled.div`
