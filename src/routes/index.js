@@ -6,6 +6,7 @@ import MonitoringPage from "../pages/monitoring/MonitoringPage";
 import HolterPage from "../pages/holter/HolterPage";
 import LoginPage from "../pages/login/LoginPage";
 import MainPage from "../pages/main/MainPage";
+import WishListPage from "../pages/wishList/WishListPage";
 
 export default function RootRoute() {
   return (
@@ -17,6 +18,7 @@ export default function RootRoute() {
         <Route path="/holter-solution" element={<HolterPage />} />
         <Route path="/product-detail/:productId" element={<ProductDetailPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/wish" element={<WishListPage />} />
       </Routes>
     </BrowserRouter>
   );

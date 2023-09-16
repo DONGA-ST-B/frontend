@@ -60,9 +60,9 @@ const ProductButtonGroup = ({ productId }) => {
   const handleCartButtonClick = () => {
     const requestBody = {
       productId: productId, 
-      memberId: 1, 
+      memberId: 1,
     };
-
+  
     axios
       .post("https://www.kusitms28.shop/api/cart/add", requestBody)
       .then((response) => {
@@ -76,6 +76,7 @@ const ProductButtonGroup = ({ productId }) => {
         console.error("API 요청 중 에러 발생:", error);
       });
   };
+  
 
   const handleLikeButtonClick = () => {
     setIsLiked(!isLiked); 
