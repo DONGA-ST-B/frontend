@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/hicardi_logo.png";
 import { Search } from "@mui/icons-material";
+import axios from "axios";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -14,6 +15,45 @@ export default function Header() {
   const handleBuyClick = () => {
     navigate("/buy-list");
   };
+
+  const [searchType, setSearchType] = useState("Product");
+
+  const [keyword, setKeyword] = useState("");
+  const [product, setProduct] = useState([]);
+
+  const handleSearch = () => {
+    axios
+      .post("https://www.kusitms28.shop/api/search/Product", {
+        keyword: keyword,
+      })
+      .then((res) => {
+        console.log("res.data:", res.data);
+        setProduct(res.data);
+        console.log("product:", product);
+
+        navigate("/search", { state: res.data });
+      })
+      .catch((err) => {
+        console.log("err:", err);
+      });
+  };
+
+  // const handleSearch = async () => {
+  //   try {
+  //     const res = await axios.post(
+  //       `https://www.kusitms28.shop/api/search/Product`,
+  //       {
+  //         keyword: keyword,
+  //       }
+  //     );
+  //     const data = res.data;
+  //     console.log(data);
+  //     setProduct(data);
+  //     window.location.href = "/search";
+  //   } catch (err) {
+  //     console.error("Error:", err);
+  //   }
+  // };
 
   return (
     <HeaderBox>
@@ -35,7 +75,6 @@ export default function Header() {
             </SubMenu>
           </TextContent>
           <TextContent onClick={handleBuyClick}>구매하기</TextContent>
-          <TextContent>FAQ</TextContent>
           <TextContent>
             <StyledLink to="">게시판</StyledLink>
             <SubMenu>
@@ -62,8 +101,18 @@ export default function Header() {
             <StyledInput
               placeholder="찾으시는 제품명을 입력해주세요."
               type="text"
+              value={keyword}
+              onChange={(e) => {
+                console.log(keyword);
+                setKeyword(e.target.value);
+              }}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  handleSearch();
+                }
+              }}
             />
-            <Search />
+            <Search onClick={handleSearch} />
           </WhiteButton>
           <WhiteButton onClick={handleLoginClick}>로그인</WhiteButton>
           <SkyButton>회원가입</SkyButton>
