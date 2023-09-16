@@ -1,18 +1,36 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class BuyListButtonGroup extends Component {
+class BuyListButtonGroup extends React.Component {
   constructor(props) {
     super(props);
-    // 초기 상태 설정
     this.state = {
       selectedButton: "전체",
     };
   }
 
-  // 버튼 클릭 이벤트 핸들러
   handleButtonClick = (buttonLabel) => {
     this.setState({ selectedButton: buttonLabel });
+
+    let category;
+    switch (buttonLabel) {
+      case "전체":
+        category = "TOTAL";
+        break;
+      case "기기 본체":
+        category = "STANDARD";
+        break;
+      case "추가 용품":
+        category = "PLUS";
+        break;
+      case "추가 서비스":
+        category = "PLUSSERVICE";
+        break;
+      default:
+        category = "TOTAL"; 
+    }
+
+    this.props.onCategoryChange(category);
   };
 
   render() {
@@ -40,17 +58,16 @@ class BuyListButtonGroup extends Component {
   }
 }
 
-// 프로퍼티 유형 및 필수 여부 지정
 BuyListButtonGroup.propTypes = {
   buttons: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onCategoryChange: PropTypes.func.isRequired, 
 };
 
-// 스타일 객체 정의
 const styles = {
   buttonGroup: {
     display: "flex",
     gap: "8px",
-    marginLeft: "20vw", // 왼쪽 여백을 화면 너비의 10%로 설정
+    marginLeft: "20vw",
   },
   button: {
     padding: "8px 16px",

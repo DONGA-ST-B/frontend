@@ -1,45 +1,36 @@
-import React from "react";
-import ProductImage from "../../assets/ProductItem.png";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import ProductItem from "./ProductItem";
 
-const productList = [
-  {
-    name: "하이카디플러스 HiCardi+",
-    imageSrc: ProductImage,
-    description: "한 층 더 업그레이드 된 하이카디 플러스 HiCardi + ",
-    price: "2,046,000원",
-  },
-  {
-    name: "하이카디플러스 HiCardi+",
-    imageSrc: ProductImage,
-    description: "한 층 더 업그레이드 된 하이카디 플러스 HiCardi + ",
-    price: "2,046,000원",
-  },
-  {
-    name: "하이카디플러스 HiCardi+",
-    imageSrc: ProductImage,
-    description: "한 층 더 업그레이드 된 하이카디 플러스 HiCardi + ",
-    price: "2,046,000원",
-  },
-  {
-    name: "하이카디플러스 HiCardi+",
-    imageSrc: ProductImage,
-    description: "한 층 더 업그레이드 된 하이카디 플러스 HiCardi + ",
-    price: "2,046,000원",
-  },
-];
+const BuyList = ({ category, onCategoryChange }) => {
+  const [products, setProducts] = useState([]);
 
-const BuyList = () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const url = `https://www.kusitms28.shop/api/product/category/${category}`;
+        const response = await axios.get(url);
+        const data = response.data.data;
+        setProducts(data);
+        onCategoryChange(category);
+      } catch (error) {
+        console.error("API 호출 중 오류 발생:", error);
+      }
+    };
+
+    fetchData(); 
+  }, [category, onCategoryChange]); 
+
   return (
     <div style={styles.container}>
-      {productList.map((product, index) => (
+      {products.map((product, index) => (
         <ProductItem
           key={index}
-          name={product.name}
-          imageSrc={product.imageSrc}
-          description={product.description}
+          name={product.productName}
+          imageSrc={product.photoUrl}
+          description={product.additionalDescription}
           price={product.price}
-          index={index} // index 속성을 추가
+          index={index}
         />
       ))}
     </div>
