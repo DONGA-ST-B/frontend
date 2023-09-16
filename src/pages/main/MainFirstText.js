@@ -1,27 +1,27 @@
-import React from 'react';
-import { COLORS } from '../../styles/colors';
+import React from "react";
+import { COLORS } from "../../styles/colors";
 
 const containerStyle = {
-  textAlign: 'center',
-  marginTop: '32px',
+  textAlign: "center",
+  marginTop: "32px",
 };
 
 const lineStyle = {
   backgroundColor: COLORS.BLUE,
-  width: '80px',
-  height: '4px',
-  margin: '0 auto',
-  marginTop: '32px',
-  marginBottom: '32px',
+  width: "80px",
+  height: "4px",
+  margin: "0 auto",
+  marginTop: "32px",
+  marginBottom: "32px",
 };
 
 const textStyle = {
-  fontSize: '48px',
+  fontSize: "48px",
   color: COLORS.GRAY_900,
 };
 
 const boldTextStyle = {
-  fontWeight: 'bold',
+  fontWeight: "bold",
 };
 
 const MainFirstText = () => {
@@ -29,7 +29,8 @@ const MainFirstText = () => {
     <div style={containerStyle}>
       <div style={lineStyle}></div>
       <p style={textStyle}>
-        <span style={{ ...boldTextStyle, ...textStyle }}>하이카디 플러스</span>는 이렇게 활용될 수 있습니다
+        <span style={{ ...boldTextStyle, ...textStyle }}>하이카디 플러스</span>
+        는 이렇게 활용될 수 있습니다
       </p>
     </div>
   );

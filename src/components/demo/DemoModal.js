@@ -16,6 +16,13 @@ const DemoModal = (props) => {
     setIsOpen(!isOpen);
   };
 
+  //다음 모달 오픈 관련
+  const [isCompleteModalOpen, setIsCompleteModalOpen] = useState(false);
+
+  const handleModal = () => {
+    setIsCompleteModalOpen(!isCompleteModalOpen);
+  };
+
   //신청폼 관련 상태 정리
   const [type, setType] = useState("");
   const [name, setName] = useState("");
@@ -61,6 +68,7 @@ const DemoModal = (props) => {
       })
       .catch((err) => {
         console.log("err:", err);
+        alert("모든 입력 필드를 채워주세요.");
       });
 
     //모든 입력 필드가 비어있는지 여부를 검사
@@ -169,6 +177,11 @@ const DemoModal = (props) => {
               onClick={() => {
                 console.log("신청하기 버튼 클릭됨");
                 registerDemo();
+
+                if (isRegister) {
+                  setIsCompleteModalOpen(true);
+                }
+
                 // if (
                 //   !isNameEmpty &&
                 //   !isDepartEmpty &&
@@ -192,6 +205,9 @@ const DemoModal = (props) => {
           </InputBox>
         </TextBox>
       </ModalContainer>
+      {isRegister && (
+        <CompleteDemo show={isCompleteModalOpen} onClick={handleModal} />
+      )}
     </>
   );
 };

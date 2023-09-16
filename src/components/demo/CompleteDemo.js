@@ -6,7 +6,7 @@ import { Close } from "@mui/icons-material";
 const CompleteDemo = (props) => {
   return (
     <ModalContainer show={props.show}>
-      <ExitIcon onClick={props.onClick}>
+      <ExitIcon>
         <Close />
       </ExitIcon>
       <TextBox>
