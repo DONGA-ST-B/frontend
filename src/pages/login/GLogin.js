@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import styled from "styled-components";
-// import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
 import { Button } from "@mui/base";
 import axios from "axios";
