@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import styled from "styled-components";
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+// import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
 import { Button } from "@mui/base";
 import axios from "axios";
@@ -56,15 +56,15 @@ const GLogin = ({ onSocial }) => {
     <div>
       <Header />
       <LoginContainer>
-        <GoogleLogin
+        {/*   <GoogleLogin
           clientId={clientId}
           buttonText="구글 아이디로 로그인하기"
           onSuccess={successGoogle}
           onFailure={failGoogle}
           // onClick={handleGoogleLogin}
-        />
+        /> */}
         <Button onClick={handleGoogleLogin}>구글로그인</Button>
-        <GoogleLogout clientId={clientId} onLogoutSuccess={onLogoutSuccess} />
+        {/* <GoogleLogout clientId={clientId} onLogoutSuccess={onLogoutSuccess} /> */}
       </LoginContainer>
       <Footer />
     </div>
