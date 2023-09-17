@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom'; // useNavigate를 import합니다.
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import SocialButton from "./SocialButton";
 import Naver from "../../assets/Naver.png";
@@ -8,7 +7,7 @@ import Kakao from "../../assets/Kakao.png";
 import Google from "../../assets/Google.png";
 import axios from "axios";
 import { Button } from "@mui/material";
-import Cookies from 'js-cookie'; // js-cookie 라이브러리를 import
+import Cookies from 'js-cookie';
 
 const SocialGroupWrapper = styled.div`
   display: flex;
@@ -26,22 +25,15 @@ const SocialGroup = () => {
 
   const handleGoogleLogin = async () => {
     try {
-      const response = await axios.get(
-        "https://www.kusitms28.shop/auth/google"
-      );
-      console.log(response.data);
-      console.log("로그인 성공");
+      // Google OAuth 인증을 위한 리다이렉션 URI
+      const redirectUri = "https://www.kusitms28.shop/auth/google";
 
-      // 쿠키에서 jsessionid 값을 추출
-      const jsessionid = response.headers['set-cookie'].find(cookie => cookie.startsWith('JSESSIONID='));
+      // 클라이언트 아이디 설정
+      const clientId = "246666582622-e0lnk1uurrro5kj3qjim16lhtguhvdki.apps.googleusercontent.com"; 
 
-      if (jsessionid) {
-        // JSESSIONID 쿠키를 설정
-        Cookies.set('JSESSIONID', jsessionid, { expires: 1 }); // 쿠키 만료일 설정
-      }
+      // 구글 로그인 페이지로 리다이렉션
+      window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=YOUR_SCOPE`;
 
-      // 로그인 성공 시 리다이렉션
-      navigate('/'); // 원하는 경로로 리다이렉션합니다.
     } catch (error) {
       console.error("Google 로그인 요청에 실패했습니다.", error);
     }
@@ -56,10 +48,7 @@ const SocialGroup = () => {
         <SocialButton logoSrc={Kakao} />
       </Link>
       <Button onClick={handleGoogleLogin}>
-        <Link to="https://www.kusitms28.shop/auth/google">
-          {" "}
-          <SocialButton logoSrc={Google} />
-        </Link>
+        <SocialButton logoSrc={Google} />
       </Button>
     </SocialGroupWrapper>
   );
