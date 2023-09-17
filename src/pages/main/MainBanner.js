@@ -28,6 +28,13 @@ const textContainerStyle = {
   transform: "translate(-50%, -50%)",
   textAlign: "center",
   width: "100%",
+
+  color: "var(--gray-900, #15191D)",
+  textAlign: "center",
+  fontFamily: "Pretendard",
+  fontSize: "64px",
+  fontStyle: "normal",
+  fontWeight: "700",
 };
 
 const textStyle = {
