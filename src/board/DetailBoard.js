@@ -76,7 +76,7 @@ const TabTitle = styled.div`
 
   /* H3_B */
   font-family: Pretendard;
-  font-size: 20px;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 700;
   line-height: 160%; /* 32px */
@@ -117,6 +117,8 @@ const SecondMenu = styled.div`
   line-height: normal;
   letter-spacing: 0.084px;
   align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 const EmptyText = styled.div`
