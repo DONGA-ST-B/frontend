@@ -115,7 +115,7 @@ export default function SecondHeader() {
             <Search onClick={handleSearch} />
           </WhiteButton>
           <WhiteButton onClick={handleLoginClick}>로그아웃</WhiteButton>
-          <SkyButton>회원가입</SkyButton>
+          <SkyButton>마이페이지</SkyButton>
         </MenuText>
       </RightBox>
     </HeaderBox>
