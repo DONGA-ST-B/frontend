@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import axios from "axios";
 //
-import { motion, AnimatePresence } from "framer-motion";
 
 //
 import { useScrollFadeIn } from "./ScrollFadeIn";
@@ -51,10 +50,6 @@ export default function Component5() {
   };
 
   //animation
-  const item = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
 
   return (
     <WindowBox>
