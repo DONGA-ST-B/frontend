@@ -12,6 +12,7 @@ import ArticleSearch from "../search/ArticleSearch";
 import ArticlePage from "../search/ArticlePage";
 import GLogin from "../pages/login/GLogin";
 import GoogleLoginPage from "../pages/google/GoogleLoginPage";
+import BoardPage from "../board/BoardPage";
 
 export default function RootRoute() {
   return (
@@ -31,6 +32,8 @@ export default function RootRoute() {
         <Route path="/search/article" element={<ArticlePage />} />
         <Route path="/google-login" element={<GLogin />} />
         {/* <Route path="/google-login" element={<GoogleLoginPage />} /> */}
+
+        <Route path="/board" element={<BoardPage />} />
       </Routes>
     </BrowserRouter>
   );
