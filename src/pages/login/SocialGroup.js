@@ -45,12 +45,12 @@ const SocialGroup = () => {
       <Link to="/kakao-login">
         <SocialButton logoSrc={Kakao} />
       </Link>
-      {/* <Button onClick={handleGoogleLogin}> */}
-      <Link to="/google-login">
-        {" "}
-        <SocialButton logoSrc={Google} />
-      </Link>
-      {/* </Button> */}
+      <Button onClick={handleGoogleLogin}>
+        <Link to="https://www.kusitms28.shop/auth/google">
+          {" "}
+          <SocialButton logoSrc={Google} />
+        </Link>
+      </Button>
     </SocialGroupWrapper>
   );
 };

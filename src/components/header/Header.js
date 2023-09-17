@@ -64,7 +64,7 @@ export default function Header() {
           </Link>
           <a></a>
           <TextContent>
-            <StyledLink to="/">서비스 소개</StyledLink>
+            <StyledLink to="/monitoring-solution">서비스 소개</StyledLink>
             <SubMenu>
               <SubStyledLink to="/monitoring-solution" className="sub-li">
                 환자모니터링 솔루션
@@ -76,7 +76,7 @@ export default function Header() {
           </TextContent>
           <TextContent onClick={handleBuyClick}>구매하기</TextContent>
           <TextContent>
-            <StyledLink to="">게시판</StyledLink>
+            <StyledLink to="/board">게시판</StyledLink>
             <SubMenu>
               <SubStyledLink to="" className="sub-li">
                 공지사항
