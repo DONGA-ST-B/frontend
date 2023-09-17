@@ -2,17 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
-import SocialButton from "./SocialButton"; 
-import Naver from "../../assets/Naver.png"
-import Kakao from "../../assets/Kakao.png"
-import Google from "../../assets/Google.png"
+import SocialButton from "./SocialButton";
+import Naver from "../../assets/Naver.png";
+import Kakao from "../../assets/Kakao.png";
+import Google from "../../assets/Google.png";
 import axios from "axios";
 import { Button } from "@mui/material";
 import Cookies from 'js-cookie'; // js-cookie 라이브러리를 import
 
 const SocialGroupWrapper = styled.div`
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 
@@ -26,7 +26,9 @@ const SocialGroup = () => {
 
   const handleGoogleLogin = async () => {
     try {
-      const response = await axios.get('https://www.kusitms28.shop/auth/google');
+      const response = await axios.get(
+        "https://www.kusitms28.shop/auth/google"
+      );
       console.log(response.data);
       console.log("로그인 성공");
 
@@ -39,7 +41,7 @@ const SocialGroup = () => {
       }
 
       // 로그인 성공 시 리다이렉션
-      navigate('/');
+      navigate("/");
     } catch (error) {
       console.error("Google 로그인 요청에 실패했습니다.", error);
     }
@@ -53,9 +55,12 @@ const SocialGroup = () => {
       <Link to="/kakao-login">
         <SocialButton logoSrc={Kakao} />
       </Link>
-      <Button onClick={handleGoogleLogin}>
+      {/* <Button onClick={handleGoogleLogin}> */}
+      <Link to="/google-login">
+        {" "}
         <SocialButton logoSrc={Google} />
-      </Button>
+      </Link>
+      {/* </Button> */}
     </SocialGroupWrapper>
   );
 };

@@ -10,6 +10,7 @@ import WishListPage from "../pages/wishList/WishListPage";
 import SearchPage from "../search/SearchPage";
 import ArticleSearch from "../search/ArticleSearch";
 import ArticlePage from "../search/ArticlePage";
+import GLogin from "../pages/login/GLogin";
 import GoogleLoginPage from "../pages/google/GoogleLoginPage";
 
 export default function RootRoute() {
@@ -20,12 +21,16 @@ export default function RootRoute() {
         <Route path="/monitoring-solution" element={<MonitoringPage />} />
         <Route path="/buy-list" element={<BuyListPage />} />
         <Route path="/holter-solution" element={<HolterPage />} />
-        <Route path="/product-detail/:productId" element={<ProductDetailPage />} />
+        <Route
+          path="/product-detail/:productId"
+          element={<ProductDetailPage />}
+        />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/wish" element={<WishListPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/search/article" element={<ArticlePage />} />
-        <Route path="/google-login" element={<GoogleLoginPage />} />
+        <Route path="/google-login" element={<GLogin />} />
+        {/* <Route path="/google-login" element={<GoogleLoginPage />} /> */}
       </Routes>
     </BrowserRouter>
   );
