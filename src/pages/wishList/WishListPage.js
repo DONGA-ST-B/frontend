@@ -5,23 +5,34 @@ import WishItem from "./WishItem";
 import WishPrice from "./WishPrice";
 import WishTitle from "./WishTitle";
 import WishSideMenu from "./WishSideMenu";
+import SecondHeader from "../../components/header/SecondHeader";
+import styled from "styled-components";
 
 export default function WishListPage() {
-    return (
-        <div>
-            <Header />
-            <WishTitle />
-            <div style={{ display: "flex" }}>
-                <div style={{ flex: "30%", marginLeft: "100px", marginBottom: "160px" }}>
-                    <WishSideMenu />
-                </div>
-
-                <div style={{ flex: "70%", marginLeft: "160px"}}>
-                    <WishItem />
-                    <WishPrice />
-                </div>
-            </div>
-            <Footer />
+  return (
+    <div>
+      <SecondHeader />
+      <WishTitle />
+      <div style={{ display: "flex" }}>
+        <div
+          style={{ flex: "30%", marginLeft: "100px", marginBottom: "160px" }}
+        >
+          <WishSideMenu />
         </div>
-    );
+
+        <CartBox>
+          <WishItem />
+          {/* <WishPrice /> */}
+        </CartBox>
+      </div>
+      <Footer />
+    </div>
+  );
 }
+
+const CartBox = styled.div`
+  flex: 100%;
+  justify-content: center;
+  margin-left: 160px;
+  margin-bottom: 150px;
+`;

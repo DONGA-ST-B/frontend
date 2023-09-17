@@ -5,8 +5,8 @@ import LikeFalse from "../../assets/BuyLike.png";
 import LikeTrue from "../../assets/LikeHearTrue.png";
 
 const ProductButtonGroup = ({ productId }) => {
-  const [message] = useState(""); 
-  const [isLiked, setIsLiked] = useState(false); 
+  const [message] = useState("");
+  const [isLiked, setIsLiked] = useState(false);
 
   const buttonGroupStyle = {
     display: "flex",
@@ -59,12 +59,12 @@ const ProductButtonGroup = ({ productId }) => {
 
   const handleCartButtonClick = () => {
     const requestBody = {
-      productId: productId, 
+      productId: productId,
       memberId: 1,
     };
-  
+
     axios
-      .post("https://www.kusitms28.shop/api/cart/add", requestBody)
+      .post("https://www.kusitms28.shop/api/cart/add/1", requestBody)
       .then((response) => {
         if (response.data.isSuccess) {
           alert("장바구니에 제품 추가를 완료했습니다.");
@@ -76,10 +76,9 @@ const ProductButtonGroup = ({ productId }) => {
         console.error("API 요청 중 에러 발생:", error);
       });
   };
-  
 
   const handleLikeButtonClick = () => {
-    setIsLiked(!isLiked); 
+    setIsLiked(!isLiked);
   };
 
   return (
