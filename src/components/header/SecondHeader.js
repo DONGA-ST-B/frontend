@@ -5,7 +5,7 @@ import logo from "../../assets/hicardi_logo.png";
 import { Search } from "@mui/icons-material";
 import axios from "axios";
 
-export default function Header() {
+export default function SecondHeader() {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
@@ -114,7 +114,7 @@ export default function Header() {
             />
             <Search onClick={handleSearch} />
           </WhiteButton>
-          <WhiteButton onClick={handleLoginClick}>로그인</WhiteButton>
+          <WhiteButton onClick={handleLoginClick}>로그아웃</WhiteButton>
           <SkyButton>회원가입</SkyButton>
         </MenuText>
       </RightBox>
