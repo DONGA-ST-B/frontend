@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import axios from "axios";
+//
 
 //
 import { useScrollFadeIn } from "./ScrollFadeIn";
@@ -48,6 +49,8 @@ export default function Component5() {
     }
   };
 
+  //animation
+
   return (
     <WindowBox>
       <Container>
@@ -67,6 +70,8 @@ export default function Component5() {
             observe={true}
             observerParents={true}
             loop={true}
+            autoplay={{ delay: 1000 }}
+            // loopAdditionSlides={1}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
             // breakpoints={{
