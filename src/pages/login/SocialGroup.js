@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // useNavigate를 import합니다.
 import styled from "styled-components";
 import SocialButton from "./SocialButton";
 import Naver from "../../assets/Naver.png";
@@ -41,7 +41,7 @@ const SocialGroup = () => {
       }
 
       // 로그인 성공 시 리다이렉션
-      navigate("/");
+      navigate('/'); // 원하는 경로로 리다이렉션합니다.
     } catch (error) {
       console.error("Google 로그인 요청에 실패했습니다.", error);
     }
