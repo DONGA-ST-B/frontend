@@ -15,7 +15,7 @@ const MainSelectGroupWrapper = styled.div`
   
   padding: 0px 16px; /* 위 아래 여백 60px, 좌우 여백 반응형 조절 */
 
-  @media (min-width: 768px) {
+  @media (min-width: 1500px) {
     padding: 60px 162px; /* 화면이 768px 이상일 때 좌우 여백 162px로 변경 */
   }
 `;
@@ -25,9 +25,11 @@ const MainSelectRow = styled.div`
   flex-direction: column; /* 화면이 작을 때 세로로 쌓이도록 변경 */
   margin-top: 24px; /* 위쪽 여백 24px */
   width: 100%; /* 화면 너비에 따라 컨텐츠 가득 차도록 설정 */
+  align-items: center;
 
-  @media (min-width: 768px) {
-    flex-direction: row; /* 화면이 768px 이상일 때 가로로 정렬 */
+
+  @media (min-width: 1200px) {
+    flex-direction: row; 
     gap: 48px; /* MainSelectItem 컴포넌트 간격 48px */
   }
 `;
