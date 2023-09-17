@@ -115,7 +115,9 @@ export default function SecondHeader() {
             <Search onClick={handleSearch} />
           </WhiteButton>
           <WhiteButton onClick={handleLoginClick}>로그아웃</WhiteButton>
-          <SkyButton>마이페이지</SkyButton>
+          <Link to="/wish" style={{ textDecoration: "none" }}>
+            <SkyButton>마이페이지</SkyButton>
+          </Link>
         </MenuText>
       </RightBox>
     </HeaderBox>
