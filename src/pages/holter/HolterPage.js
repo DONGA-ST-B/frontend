@@ -9,6 +9,7 @@ import Part6 from "./Part6";
 import Part7 from "./Part7";
 import Footer from "../../components/footer/Footer";
 import Part8 from "./Part8";
+import FloatingButton from "../../components/demo/FloatingButton";
 
 export default function HolterPage() {
   return (
@@ -22,6 +23,7 @@ export default function HolterPage() {
       <Part6 />
       <Part7 />
       <Part8 />
+      <FloatingButton />
       <Footer />
     </div>
   );

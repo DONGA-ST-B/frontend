@@ -17,7 +17,11 @@ const lineStyle = {
 
 const textStyle = {
   fontSize: "48px",
-  color: COLORS.GRAY_900,
+  color: "var(--gray-900, #15191D)",
+  FontFmaily: "Pretendard",
+  fontStyle: "normal",
+  lineHeight: "160%",
+  letterSpacing: "0.072px",
 };
 
 const boldTextStyle = {
