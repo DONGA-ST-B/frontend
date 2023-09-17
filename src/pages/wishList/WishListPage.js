@@ -1,8 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import WishItem from "./WishItem";
+import WishPrice from "./WishPrice";
 
 
 export default function WishListPage() {
@@ -11,6 +11,7 @@ export default function WishListPage() {
         <Header />
         <div>
             <WishItem />
+            <WishPrice />
         </div>
         <Footer />
       </div>

@@ -10,6 +10,7 @@ import WishListPage from "../pages/wishList/WishListPage";
 import SearchPage from "../search/SearchPage";
 import ArticleSearch from "../search/ArticleSearch";
 import ArticlePage from "../search/ArticlePage";
+import GoogleLoginPage from "../pages/google/GoogleLoginPage";
 
 export default function RootRoute() {
   return (
@@ -24,6 +25,7 @@ export default function RootRoute() {
         <Route path="/wish" element={<WishListPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/search/article" element={<ArticlePage />} />
+        <Route path="/google-login" element={<GoogleLoginPage />} />
       </Routes>
     </BrowserRouter>
   );
