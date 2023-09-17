@@ -1,5 +1,6 @@
 import React from "react";
 import { COLORS } from "../../styles/colors";
+import styled from "styled-components";
 
 const itemStyle = {
   width: "500px",
@@ -52,18 +53,29 @@ const textContainerStyle = {
   top: "180px", // 수정: marginTop 대신 top 사용
   bottom: "40px", // 수정: marginTop 대신 bottom 사용
   right: "40px", // 수정: paddingRight 대신 right 사용
+  // border: "1px solid red",
+  display: "flex",
+  flexDirection: "column",
+  color: "var(--gray-900, #15191D)",
+  fontFamily: "Pretendard",
+  fontSize: "32px",
+  fontStyle: "normal",
+  lineHeight: "90%",
 };
 
 const titleStyle = {
-  fontSize: "28px",
+  fontSize: "1.6rem",
   fontWeight: "bold",
   color: COLORS.GRAY_900,
   marginBottom: "20px", // 수정: marginBottom 조정
 };
 
 const contentStyle = {
+  // display: "flex",
   fontSize: "18px",
-  color: COLORS.GRAY_700,
+  // color: COLORS.GRAY_700,
+  color: "gray",
+  // color: "var(--gray-700, #53575C)",
   marginBottom: "20px", // 수정: marginBottom 조정
 };
 
@@ -73,11 +85,11 @@ const MainSelectItem = ({ why, content, title, image }) => {
       {why ? (
         <>
           {image && <img src={image} alt="Item" style={imageStyle1} />}
-          <div style={{ position: "absolute", bottom: "20px", left: "40px" }}>
+          <TextStyled>
             왜 하이카디를
             <br />
             선택해야 하나요?
-          </div>
+          </TextStyled>
         </>
       ) : (
         <>
@@ -91,5 +103,18 @@ const MainSelectItem = ({ why, content, title, image }) => {
     </div>
   );
 };
+
+const TextStyled = styled.div`
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  color: var(--gray-900, #15191d);
+  font-family: Pretendard;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 57.6px */
+  /* gap: 30px; */
+`;
 
 export default MainSelectItem;
