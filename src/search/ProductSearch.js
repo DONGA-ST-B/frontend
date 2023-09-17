@@ -36,7 +36,7 @@ const ProductSearch = () => {
 };
 
 const ProductContainer = styled.div`
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   flex-direction: column;
   justify-content: center;

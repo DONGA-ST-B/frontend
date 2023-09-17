@@ -19,6 +19,14 @@ const DemoModal = (props) => {
   //다음 모달 오픈 관련
   const [isCompleteModalOpen, setIsCompleteModalOpen] = useState(false);
 
+  const openModal = () => {
+    setIsCompleteModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsCompleteModalOpen(false);
+  };
+
   const handleModal = () => {
     setIsCompleteModalOpen(!isCompleteModalOpen);
   };
@@ -63,6 +71,9 @@ const DemoModal = (props) => {
         alert(res.data.message);
         if (res.data.isSuccess == true) {
           setIsRegister(true);
+        }
+        if (isRegister) {
+          setIsCompleteModalOpen(true);
         }
         console.log(selectedType);
       })
@@ -206,7 +217,11 @@ const DemoModal = (props) => {
         </TextBox>
       </ModalContainer>
       {isRegister && (
-        <CompleteDemo show={isCompleteModalOpen} onClick={handleModal} />
+        <CompleteDemo
+          show={isCompleteModalOpen}
+          onClick={handleModal}
+          onClose={closeModal}
+        />
       )}
     </>
   );

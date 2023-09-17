@@ -4,9 +4,11 @@ import styled from "styled-components";
 import { Close } from "@mui/icons-material";
 
 const CompleteDemo = (props) => {
+  const { onClose } = props;
+
   return (
     <ModalContainer show={props.show}>
-      <ExitIcon>
+      <ExitIcon onClick={props.onClose}>
         <Close />
       </ExitIcon>
       <TextBox>
