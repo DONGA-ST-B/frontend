@@ -8,12 +8,11 @@ const ProductOption = ({ onPriceIncrease }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuHeight, setMenuHeight] = useState(0);
 
-
   const optionStyle = {
     position: "relative",
     borderRadius: "27.5px",
     width: "100%",
-    minHeight: "64px", // 최소 높이를 설정
+    minHeight: "64px",
     border: "1px solid #E0E0E0",
     backgroundColor: "white",
     display: "flex",
@@ -53,7 +52,6 @@ const ProductOption = ({ onPriceIncrease }) => {
     textAlign: "center",
   };
 
-
   const handleOptionClick = () => {
     setIsMenuOpen(!isMenuOpen);
     setMenuHeight(menuHeight === 0 ? 500 : 0);
@@ -66,13 +64,12 @@ const ProductOption = ({ onPriceIncrease }) => {
     onPriceIncrease(price); // 선택한 옵션의 가격을 부모 컴포넌트로 전달
   };
 
-  
-   return (
+  return (
     <div style={{ ...optionStyle, minHeight: isMenuOpen ? "auto" : "64px" }}>
       {selectedOption ? (
         <div>
           <span>{selectedOption}</span>
-         
+
         </div>
       ) : (
         <span style={textStyle}>- [필수] 옵션을 선택해 주세요 -</span>

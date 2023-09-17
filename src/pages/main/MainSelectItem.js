@@ -18,6 +18,7 @@ const imageStyle1 = {
   position: "absolute",
   top: "60px", // 이미지의 위치를 조정
   left: "40px", // 좌측 여백 40px
+  right: "40px",
   width: "180px", // 이미지 넓이 120px로 설정
   height: "46px", // 이미지 높이 120px로 설정
 };
@@ -26,6 +27,7 @@ const imageStyle2 = {
   position: "absolute",
   top: "60px", // 이미지의 위치를 조정
   left: "40px", // 좌측 여백 40px
+  right: "40px",
   width: "90px", // 이미지 넓이 120px로 설정
   height: "90px", // 이미지 높이 120px로 설정
 };
@@ -47,20 +49,22 @@ const style2 = {
 const textContainerStyle = {
   position: "absolute",
   left: "40px",
-  marginTop: "180px",
+  top: "180px", // 수정: marginTop 대신 top 사용
+  bottom: "40px", // 수정: marginTop 대신 bottom 사용
+  right: "40px", // 수정: paddingRight 대신 right 사용
 };
 
 const titleStyle = {
   fontSize: "28px",
   fontWeight: "bold",
   color: COLORS.GRAY_900,
-  marginBottom: "40px", // title과 content 사이 간격 설정
+  marginBottom: "20px", // 수정: marginBottom 조정
 };
 
 const contentStyle = {
   fontSize: "18px",
   color: COLORS.GRAY_700,
-  marginBottom: "40px", // title과 content 사이 간격 설정
+  marginBottom: "20px", // 수정: marginBottom 조정
 };
 
 const MainSelectItem = ({ why, content, title, image }) => {
@@ -69,7 +73,7 @@ const MainSelectItem = ({ why, content, title, image }) => {
       {why ? (
         <>
           {image && <img src={image} alt="Item" style={imageStyle1} />}
-          <div style={{ position: "absolute", bottom: "60px", left: "40px" }}>
+          <div style={{ position: "absolute", bottom: "20px", left: "40px" }}>
             왜 하이카디를
             <br />
             선택해야 하나요?
