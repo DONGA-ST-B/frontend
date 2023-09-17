@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { gapi } from "gapi-script";
 import { Button } from "@mui/base";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const GLogin = ({ onSocial }) => {
   useEffect(() => {
@@ -62,7 +63,10 @@ const GLogin = ({ onSocial }) => {
           onFailure={failGoogle}
           // onClick={handleGoogleLogin}
         /> */}
-        <Button onClick={handleGoogleLogin}>구글로그인</Button>
+        <a href="https://www.kusitms28.shop/auth/google">
+          {" "}
+          <Button>구글로그인</Button>
+        </a>
         {/* <GoogleLogout clientId={clientId} onLogoutSuccess={onLogoutSuccess} /> */}
       </LoginContainer>
       <Footer />
